@@ -29,8 +29,8 @@ We rely on version Python 2.7, the most recent one of the 2.x series.
 
 We provide a ready-to-use template with ZooKeeper configured in standalone mode.
 
-**[EXERCISE]** Clone the VM template *ZooKeeper-Ubuntu-14.04* on OpenNebula and instantiate it.
-Be sure to be able to SSH into it. 
+**[EXERCISE]** Instantiate the VM template *ZooKeeper-Ubuntu-14.04* on OpenNebula to have your own ZooKeeper service.
+Verify that you can correcly SSH into the VM. 
 
 **[EXERCISE]** Upon bootstrap, verify that the zookeeper service is up&running:
 ```bash
