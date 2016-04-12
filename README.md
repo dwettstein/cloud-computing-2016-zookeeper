@@ -54,8 +54,8 @@ However, to implement more complex scenarios and algorithms, we will rely on the
 
 ##1.3 - Kazoo
 
-We base our work on [kazoo](http://kazoo.readthedocs.org/en/latest/index.html), a Python library that ease interacting with ZooKeeper.
-Kazoo contains a convenient API that consists in create, read, update and delete (CRUD) operations, some complex 'ZooKeeper recipes', e.g., barrier and [watchers](http://kazoo.readthedocs.org/en/latest/api/recipe/watchers.html).
+We use [kazoo](http://kazoo.readthedocs.org/en/latest/index.html), a Python library for interacting with ZooKeeper.
+Kazoo offers a convenient API to perform CRUD operatins (create, read, update and delete), some complex 'ZooKeeper recipes', e.g., barrier, locks, and [watchers](http://kazoo.readthedocs.org/en/latest/api/recipe/watchers.html).
 All details are given in the [API documentation](http://kazoo.readthedocs.org/en/latest/api.html).
 Read the documentation carefully.
 
