@@ -171,6 +171,8 @@ The given VM setups ZooKeeper in standalone mode, that is with one single ZooKee
 In this last section, you must configure a ZooKeeper cluster with 3 servers, each one running on a separate VM.
 Follow the official instructions [here](https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup).
 
-One the cluster of ZooKeeer servers is functional, you should test your master/worker system on this deployment.
+Once the cluster of ZooKeeer servers is functional, you should test your master/worker system on this deployment.
 
-**[EXERCISE]** Let one ZooKeeper server fail: how your system react in this scenario ? 
+**[EXERCISE]** What differences do you observe ? 
+
+**[EXERCISE]** Let one of the ZooKeeper server fail: how your system react in this scenario ? 
