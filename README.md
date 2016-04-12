@@ -79,7 +79,7 @@ A recipe in pseudo-code using these building blocks is available [online](http:/
 
 **[EXERCISE]** Using the Kazoo library to issue CRUD operations and set watchers, complete the leader election class in *election.py*.
 
-**[EXERCISE]** Run several instances of *election.py* (TODO: add link to the skeleton file): at the end of the execution, only one leader is supposed to be elected. Hint: they should  compete on the */master* znode.
+**[EXERCISE]** Run several instances of *election.py*: at the end of the execution, only one leader is supposed to be elected. Hint: they should  compete on the */master* znode.
 
 **[EXERCISE]** Send SIGTERM to some of the running *election.py* instances. Ensure your code is correct, i.e., *(i)* at most one leader is elected, and *(ii)* eventually, a running process is elected. Hint: check an example on signal handling in Python [here](https://docs.python.org/2/library/signal.html#example).
 
