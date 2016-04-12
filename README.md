@@ -15,17 +15,19 @@ Then, we introduce zk-shell, a convenient tool to use interactively ZooKeeper as
 Further, we present the leader election building block to implement.
 Finally, we describe the core of this project, e.g. the master/worker architecture. 
 
+Fork this repository to start the assignment.   
+
 You need to complete all the  items marked by **[EXERCISE]**.
 
 ##0 - Pre-requisites
 Some knowledge of the Python programming language. 
-Note that there are plenty of very good tutorials online, and that you should be able to learn the basics very quickly.
+There are plenty of very good tutorials online, and you should be able to learn the basics very quickly.
 A good tutorial is [here](http://www.learnpython.org/en/).
-We rely on version Python 2.7, which is the most recent version of the 2.x series. 
+We rely on version Python 2.7, the most recent one of the 2.x series. 
 
 ##1.1 - ZooKeeper 
 
-We provide a ready-to-use template with ZooKeeper ready to use in standalone mode.
+We provide a ready-to-use template with ZooKeeper configured in standalone mode.
 
 **[EXERCISE]** Clone the VM template *ZooKeeper-Ubuntu-14.04* on OpenNebula and instantiate it.
 Be sure to be able to SSH into it. 
