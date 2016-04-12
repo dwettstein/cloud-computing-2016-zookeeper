@@ -107,6 +107,17 @@ In our implementation of the master/worker architecture, we use ZooKeeper for al
 between clients, workers, the master and its backup(s).
 Below, we list the various steps each component of the master/worker architecture should execute.
 
+A master (and any backup) should:
+
+1. Set a watch on **/tasks**
+2. Set a watch on **/workers**
+3. Participate to the master election
+4. Upon a change to **/tasks** or **/workers**
+  1. If not the master, skip what follows
+  2. Compute free workers
+  3. Compute unassigned tasks
+  4. Map unassigned tasks to free workers
+
 A worker should:
 
 1. Choose a random id **xxx**
@@ -124,22 +135,13 @@ A client should:
 2. Submit **xxx** and its data, in respectively in **/data** and **/tasks** 
 3. Watch for **xxx** completion
 4. Clean-up **xxx** metadata
-5. Repeat 1
+5. Fetch the result
+6. Repeat 1
 
-A master (and any backup) should:
-
-1. Set a watch on **/tasks**
-2. Set a watch on **/workers**
-3. Participate to the master election
-4. Upon a change to **/tasks** or **/workers**
-  1. If not the master, skip what follows
-  2. Compute free workers
-  3. Compute unassigned tasks
-  4. Map unassigned tasks to free workers
 
 To facilitate the implementation of the above architecture, we provide in the Git repositories the skeletons of all the above components, as well as some utilities functions that can be used across all the components.
-In more details, *client.py*, *worker.py* and *master.py* contain respectively the code of the client, the worker and the master.
-The file *utils.py* includes a simple task definition, as well as a function that initializes the connection to ZooKeeper and stop it upon the reception of a SIGTERM signal.
+In more details, *client.py*, *worker.py* and *master.py* contain respectively the skeletons for the client, the worker and the master.
+The file *utils.py* includes a simple task definition, functions to initializes the connection to ZooKeeper and stop it upon the reception of a SIGTERM signal.
 
 **[EXERCISE]** Complete the code of *client.py* to submit a task. Test the correctness of your implementation by listing the content of the ZK tree with zk-shell, and emulating the completion of the task. 
 
@@ -151,6 +153,7 @@ The file *utils.py* includes a simple task definition, as well as a function tha
 
 The architecture must be resilient to different fault scenarios.
 Let us denote **C/W/M** the respective number of clients, workers and master in a scenario.
+Note that all servers, workers and clients are executed on the same VM, thus with very short delays upon the submission of the commands and their executions (few milliseconds).
 Your implementation should work correctly in all following scenarios:
 
 1. **(1/1/1)** a worker or a client fails;
@@ -161,3 +164,13 @@ Your implementation should work correctly in all following scenarios:
 **[EXERCISE]** Provide evidences that your implementation works correctly in the 4 mentioned scenarios. You can provide logs and detailed explanations, use tables, etc. Discuss with the both assistants to decide upon your plan of action.
 
 **[EXERCISE]** Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle). 
+
+
+##3.3 ZooKeeper in Quorum Mode
+The given VM setups ZooKeeper in standalone mode, that is with one single ZooKeeper server.
+In this last section, you must configure a ZooKeeper cluster with 3 servers, each one running on a separate VM.
+Follow the official instructions [here](https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup).
+
+One the cluster of ZooKeeer servers is functional, you should test your master/worker system on this deployment.
+
+**[EXERCISE]** Let one ZooKeeper server fail: how your system react in this scenario ? 
