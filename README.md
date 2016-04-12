@@ -166,7 +166,7 @@ Your implementation should work correctly in all following scenarios:
 **[EXERCISE]** Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle). 
 
 
-##3.3 ZooKeeper in Quorum Mode
+##3.3 ZooKeeper in Cluster Mode
 The given VM setups ZooKeeper in standalone mode, that is with one single ZooKeeper server.
 In this last section, you must configure a ZooKeeper cluster with 3 servers, each one running on a separate VM.
 Follow the official instructions [here](https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup).
