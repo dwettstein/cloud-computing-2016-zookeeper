@@ -6,7 +6,7 @@ For instance, Google [reports]( http://www.cnet.com/news/google-spotlights-data-
 To ensure high-availability of services under such circumstances, it is necessary to take actions, in particular to mask/hide/tolerate the failures of nodes in the most transparant manner.
 A common approach toward to tackle these challenges is to implement redundancy and appropriate failure-handling mechanisms.
 
-In this second mini-project, we will implement to fault-tolerance techniques in a distributed setting computing.
+In this second mini-project, we will implement fault-tolerance techniques in a distributed setting computing.
 Your objective is to build a *dependable master/worker architecture* that execute *tasks* dispatched by *clients*.
 To this end, you will leverage [Apache ZooKeeper](zookeeper.apache.org), a scalable and fault-tolerant coordination service at the core of the [Hadoop](http://hadoop.apache.org/) stack.
 
