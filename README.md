@@ -23,11 +23,12 @@ You need to complete all the  items marked by **[EXERCISE]**.
 Some knowledge of the Python programming language. 
 There are plenty of very good tutorials online, and you should be able to learn the basics very quickly.
 A good tutorial is [here](http://www.learnpython.org/en/).
-We rely on version Python 2.7, the most recent one of the 2.x series. 
+We rely on Python 2.7, the most recent version of the 2.x series. 
+The provided VM (see below) comes with Python pre-installed.
 
 ##1.1 - ZooKeeper 
 
-We provide a ready-to-use template with ZooKeeper configured in standalone mode.
+We provide a ready-to-use template with ZooKeeper configured in standalone mode. 
 
 **[EXERCISE]** Instantiate the VM template *ZooKeeper-Ubuntu-14.04* on OpenNebula to have your own ZooKeeper service.
 Verify that you can correcly SSH into the VM. 
