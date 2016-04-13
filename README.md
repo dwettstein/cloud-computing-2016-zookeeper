@@ -163,7 +163,7 @@ Your implementation should work correctly in all following scenarios:
 
 **[EXERCISE]** Provide evidences that your implementation works correctly in the 4 mentioned scenarios. You can provide logs and detailed explanations, use tables, etc. Discuss with the both assistants to decide upon your plan of action.
 
-**[EXERCISE]** Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle). 
+**[EXERCISE]** Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle) instead of crashing.
 
 
 ##3.3 ZooKeeper in Cluster Mode
@@ -176,3 +176,7 @@ Once the cluster of ZooKeeer servers is functional, you should test your master/
 **[EXERCISE]** What differences do you observe ? 
 
 **[EXERCISE]** Let one of the ZooKeeper server fail: how your system react in this scenario ? 
+
+
+## How to deliver your solutions
+TBA
