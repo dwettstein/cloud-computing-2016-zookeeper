@@ -9,7 +9,7 @@ from utils import WORKERS_PATH
 
 class Client:
     
-    def __init__(self,zk):
+    def __init__(self, zk):
         self.zk = zk
     
     def submit_task(self):
@@ -24,10 +24,15 @@ class Client:
         self.zk.get_children(self.dataPath, watch=self.task_completed, include_data=True)
         
     #REACT to changes on the submitted task..                   
-    def task_completed(self, data):
-        print(data)
-        #self.zk.delete()
-        #TO COMPLETE
+    def task_completed(self, dataNode):
+        print(dataNode)
+        dataList = self.zk.get_children(dataNode)
+        for data in dataList:
+            dataTuple = self.zk.get(data)
+            print("dataTuple: " + dataTuple)
+            taskId = data.__str__().replace(DATA_PATH, "")
+            #self.zk.delete(TASKS_PATH + taskId)
+            #self.zk.delete(data)
     
     def submit_task_loop(self):
         max_iterations = 2
@@ -43,4 +48,3 @@ if __name__ == '__main__':
     client.submit_task_loop()
     while True:
         time.sleep(1)
-
