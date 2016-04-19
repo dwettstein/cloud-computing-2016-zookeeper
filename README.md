@@ -121,9 +121,7 @@ The system must handle and take care of the different faults scenarios that can 
 For example, in the case of a the master node failure, a secondary master (the backup) is elected to replace it, while keeping the task processing service available for all the clients.
 An overview of the master/worker architecture is given below.
 
-<p align="center">
-<img src="https://github.com/vschiavoni/ccs16-zk/blob/master/architecture.png" width="600">
-</p>
+![Architecture](architecture.png?raw=true)
 
 ##3.1 Master/Worker components
 
@@ -167,11 +165,11 @@ To facilitate the implementation of the above architecture, we provide in the Gi
 In more details, *client.py*, *worker.py* and *master.py* contain respectively the skeletons for the client, the worker and the master.
 The file *utils.py* includes a simple task definition, functions to initializes the connection to ZooKeeper and stop it upon the reception of a SIGTERM signal.
 
-**[EXERCISE]** Complete the code of *client.py* to submit a task. Test the correctness of your implementation by listing the content of the ZK tree with zk-shell, and emulating the completion of the task. 
+~~**[EXERCISE]** Complete the code of *client.py* to submit a task. Test the correctness of your implementation by listing the content of the ZK tree with zk-shell, and emulating the completion of the task.~~ Done.  
 
-**[EXERCISE]** Complete the code of *worker.py* that retrieve a task assignment and execute it by calling *utils.task*. Again, you may test your code by running a client and a worker, then simulate the assignment of the task to the worker with zk-shell.
+~~**[EXERCISE]** Complete the code of *worker.py* that retrieve a task assignment and execute it by calling *utils.task*. Again, you may test your code by running a client and a worker, then simulate the assignment of the task to the worker with zk-shell.~~ Done.  
 
-**[EXERCISE]** Finish the implementation of *master.py* and test the correctness of your work.
+~~**[EXERCISE]** Finish the implementation of *master.py* and test the correctness of your work.~~ Done.
 
 ##3.2 Fault-Tolerance
 
