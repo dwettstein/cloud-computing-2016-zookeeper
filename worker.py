@@ -12,10 +12,10 @@ class Worker:
     def __init__(self,zk):
         self.zk = zk
         self.uuid = uuid.uuid4()
-        self.znodePath = WORKERS_PATH + "/" + self.uuid.__str__
+        self.znodePath = WORKERS_PATH + "/" + self.uuid.__str__()
         zk.create(self.znodePath, ephemeral=False)
         # Watch for children aka task assignments.
-        zk.get_children(self.znodePath, watch=assignment_change)
+        zk.get_children(self.znodePath, watch=self.assignment_change)
     
     #do something upon the change on assignment    
     def assignment_change(self, atask, stat):

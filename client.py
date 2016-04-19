@@ -14,12 +14,12 @@ class Client:
     
     def submit_task(self):
         self.uuid = uuid.uuid4()
-        self.taskPath = TASKS_PATH + "/" + self.uuid.__str__
-        self.dataPath = DATA_PATH + "/" + self.uuid.__str__
+        self.taskPath = TASKS_PATH + "/" + self.uuid.__str__()
+        self.dataPath = DATA_PATH + "/" + self.uuid.__str__()
         # Create task.
         self.zk.create(self.taskPath, ephemeral=False)
         # Watch for task change.
-        self.zk.get_children(self.taskPath, watch=task_completed)
+        self.zk.get_children(self.taskPath, watch=self.task_completed)
         # Create data.
         self.zk.create(self.dataPath, value='data', ephemeral=False)
         
