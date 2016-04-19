@@ -13,12 +13,24 @@ class Master:
     def __init__(self,zk):
         self.master = False
         self.zk = zk
-        ##complete initialization...
+        self.znodePath = MASTER_PATH + "/manualMaster"
+        zk.create(self.znodePath, ephemeral=False)
+        # Watch for children aka task assignments.
+        zk.get_children(TASKS_PATH, watch=self.assign)
     
     #assign tasks                    
     def assign(self,children):
-        #TODO...
-        pass
+        workers = self.zk.get_children(WORKERS_PATH)
+        free_worker = None
+        least_assignments = sys.maxint
+        for worker in workers:
+            assignments = self.zk.get_children(WORKERS_PATH + "/" + worker.__str__())
+            if (len(assignments) < least_assignments):
+                least_assignments = len(assignments)
+                free_worker = worker
+        if free_worker != None 
+            self.zk.create(WORKERS_PATH + "/" + worker.__str__() + "/" + children.__str__())
+
 
 if __name__ == '__main__':
     zk = utils.init()

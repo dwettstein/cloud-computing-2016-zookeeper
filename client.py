@@ -16,12 +16,12 @@ class Client:
         self.uuid = uuid.uuid4()
         self.taskPath = TASKS_PATH + "/" + self.uuid.__str__()
         self.dataPath = DATA_PATH + "/" + self.uuid.__str__()
+        # Create data.
+        self.zk.create(self.dataPath, value='data', ephemeral=False)
         # Create task.
         self.zk.create(self.taskPath, ephemeral=False)
         # Watch for task change.
         self.zk.get_children(self.taskPath, watch=self.task_completed)
-        # Create data.
-        self.zk.create(self.dataPath, value='data', ephemeral=False)
         
     #REACT to changes on the submitted task..                   
     def task_completed(self, data, stat):
