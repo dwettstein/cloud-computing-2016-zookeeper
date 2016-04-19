@@ -18,7 +18,7 @@ class Master:
     #assign tasks                    
     def assign(self,children):
         #TODO...
-
+        pass
 
 if __name__ == '__main__':
     zk = utils.init()

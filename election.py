@@ -21,6 +21,7 @@ class Election:
     #perform a vote..    
     def ballot(self,children):
         #TO COMPLETE
+        pass
 
 
 if __name__ == '__main__':
@@ -29,9 +30,7 @@ if __name__ == '__main__':
     if len(sys.argv) == 2:
         zkhost=sys.argv[2]
         print("Using ZK at %s"%(zkhost))
-   
     #TO COMPLETE
     #ADD misisng initialization... 
-   
     while True:
         time.sleep(1)
