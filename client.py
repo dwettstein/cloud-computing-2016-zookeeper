@@ -19,7 +19,7 @@ class Client:
         # Create data.
         self.zk.create(self.dataPath, value='data', ephemeral=False)
         # Create task.
-        self.zk.create(self.taskPath, ephemeral=False)
+        self.zk.create(self.taskPath, value='0', ephemeral=False) # Value 0 means assigned = false.
         # Watch for task change.
         self.zk.get_children(self.taskPath, watch=self.task_completed)
         
@@ -35,7 +35,7 @@ class Client:
         max_iterations = 2
         current_iteration = 0
         while (current_iteration < max_iterations):
-            current_iteration++
+            current_iteration += 1
             self.submit_task()
 
 
