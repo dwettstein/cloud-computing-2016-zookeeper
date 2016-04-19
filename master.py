@@ -24,8 +24,11 @@ class Master:
         tasks = self.zk.get_children(TASKS_PATH) # TASKS_PATH should be equal to children.path
         unassignedTasks = []
         for task in tasks:
-            if self.zk.get(TASKS_PATH + "/" + task.__str__()).__str__() == '0':
-                unassignedTasks.append(task)        
+            taskValue = self.zk.get(TASKS_PATH + "/" + task.__str__()).__str__()
+            print("TaskValue: " + taskValue)
+            if taskValue == '0':
+                unassignedTasks.append(task)    
+        print("Found %i unassigned tasks." % len(unassignedTasks))    
         # Assign open tasks to workers. Usually there should be only one unassigned task at a time.
         for unassignedTask in unassignedTasks:
             workers = self.zk.get_children(WORKERS_PATH)
@@ -38,7 +41,8 @@ class Master:
                     free_worker = worker
             if free_worker != None: 
                 self.zk.create(WORKERS_PATH + "/" + worker.__str__() + "/" + unassignedTask.__str__())
-
+        self.zk.get_children(TASKS_PATH, watch=self.assign)
+        
 
 if __name__ == '__main__':
     zk = utils.init()

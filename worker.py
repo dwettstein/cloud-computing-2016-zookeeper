@@ -15,14 +15,16 @@ class Worker:
         self.znodePath = WORKERS_PATH + "/" + self.uuid.__str__()
         zk.create(self.znodePath, ephemeral=False)
         # Watch for children aka task assignments.
-        zk.get_children(self.znodePath, watch=self.assignment_change)
+        zk.get_children(self.znodePath, watch=self.assignment_change, include_data=True)
     
     #do something upon the change on assignment    
     def assignment_change(self, atask, stat):
         print("Version: %s, data: %s" % (stat.version, atask.decode("utf-8")))
         print(atask)
         print(stat)
-        # TO COMPLETE
+        utils.task([atask.decode("utf-8")])
+        self.zk.set(atask.path, '1') # 1 means completed.
+        self.zk.get_children(self.znodePath, watch=self.assignment_change, include_data=True)
         
 
 if __name__ == '__main__':
