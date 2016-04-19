@@ -8,10 +8,10 @@ from utils import WORKERS_PATH
 
 
 class Client:
-
+    
     def __init__(self,zk):
         self.zk = zk
-	
+    
     def submit_task(self):
         self.uuid = uuid.uuid4()
         self.taskPath = TASKS_PATH + "/" + self.uuid
@@ -22,15 +22,15 @@ class Client:
         self.zk.get_children(self.taskPath, watch=task_completed)
         # Create data.
         self.zk.create(self.dataPath, value='data', ephemeral=False)
-		
-	#REACT to changes on the submitted task..				   
+        
+    #REACT to changes on the submitted task..                   
     def task_completed(self, data, stat):
         print("Version: %s, data: %s" % (stat.version, data.decode("utf-8")))
         print(data)
         print(stat)
         #self.zk.delete()
-  	  	#TO COMPLETE
-	
+        #TO COMPLETE
+    
     def submit_task_loop(self):
         max_iterations = 2
         current_iteration = 0

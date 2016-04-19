@@ -9,19 +9,20 @@ class Election:
     def __init__(self, zk, path, func, args):
         self.election_path = path
         self.zk = zk
-		self.is_leader = False
+        self.is_leader = False
         if not (inspect.isfunction(func)) and not(inspect.ismethod(func)):
             logging.debug("not a function "+str(func))
             raise SystemError
-		#TO COMPLETE
-		 
+        #TO COMPLETE
+    
     def is_leading(self):
-		return self.is_leader
-		
-	#perform a vote..	
+        return self.is_leader
+    
+    #perform a vote..    
     def ballot(self,children):
-		#TO COMPLETE
-                    
+        #TO COMPLETE
+
+
 if __name__ == '__main__':
     zkhost = "127.0.0.1:2181" #default ZK host
     logging.basicConfig(format='%(asctime)s %(message)s',level=logging.DEBUG)
@@ -29,7 +30,7 @@ if __name__ == '__main__':
         zkhost=sys.argv[2]
         print("Using ZK at %s"%(zkhost))
    
-	#TO COMPLETE
+    #TO COMPLETE
     #ADD misisng initialization... 
    
     while True:

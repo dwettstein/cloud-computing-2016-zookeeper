@@ -6,18 +6,20 @@ from utils import TASKS_PATH
 from utils import DATA_PATH
 from utils import WORKERS_PATH
 
+
 class Master:
+
     #initialize the master
     def __init__(self,zk):
         self.master = False
         self.zk = zk
         ##complete initialization...
-		
     
-	#assign tasks 				   
+    #assign tasks                    
     def assign(self,children):
- 	   #todo....
-                
+        #TODO...
+
+
 if __name__ == '__main__':
     zk = utils.init()
     master = Master(zk)
