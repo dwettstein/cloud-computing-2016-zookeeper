@@ -25,11 +25,11 @@ class Client:
         
     #REACT to changes on the submitted task..                   
     def task_completed(self, dataNode):
-        print(dataNode)
+        print(dataNode.__str__())
         dataList = self.zk.get_children(dataNode)
         for data in dataList:
             dataTuple = self.zk.get(data)
-            print("dataTuple: " + dataTuple)
+            print("dataTuple: " + dataTuple.__str__())
             taskId = data.__str__().replace(DATA_PATH, "")
             #self.zk.delete(TASKS_PATH + taskId)
             #self.zk.delete(data)

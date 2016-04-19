@@ -27,7 +27,7 @@ class Master:
             unassignedTasks = []
             for task in tasks:
                 taskTuple = self.zk.get(TASKS_PATH + "/" + task.__str__())
-                print("taskTuple: " + taskTuple)
+                print("taskTuple: " + taskTuple.__str__())
                 if taskTuple[0] == '0':
                     unassignedTasks.append(task)
             print("Found %i unassigned tasks." % len(unassignedTasks))    
