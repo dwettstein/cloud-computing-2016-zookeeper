@@ -18,12 +18,10 @@ class Worker:
         zk.get_children(self.znodePath, watch=self.assignment_change, include_data=True)
     
     #do something upon the change on assignment    
-    def assignment_change(self, atask, stat):
-        print("Version: %s, data: %s" % (stat.version, atask.decode("utf-8")))
+    def assignment_change(self, atask):
         print(atask)
-        print(stat)
-        utils.task([atask.decode("utf-8")])
-        self.zk.set(atask.path, '1') # 1 means completed.
+        utils.task(atask)
+        self.zk.set(DATA_PATH + "/" + atask.path.__str__(), '0') # Set task result into data node.
         self.zk.get_children(self.znodePath, watch=self.assignment_change, include_data=True)
         
 

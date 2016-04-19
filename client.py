@@ -24,10 +24,8 @@ class Client:
         self.zk.get_children(self.dataPath, watch=self.task_completed, include_data=True)
         
     #REACT to changes on the submitted task..                   
-    def task_completed(self, data, stat):
-        print("Version: %s, data: %s" % (stat.version, data.decode("utf-8")))
+    def task_completed(self, data):
         print(data)
-        print(stat)
         #self.zk.delete()
         #TO COMPLETE
     
