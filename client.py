@@ -19,9 +19,9 @@ class Client:
         # Create data.
         self.zk.create(self.dataPath, value='2', ephemeral=False)
         # Create task.
-        self.zk.create(self.taskPath, value='0', ephemeral=False) # Value 0 means uncompleted.
-        # Watch for task change.
-        self.zk.get_children(self.taskPath, watch=self.task_completed, include_data=True)
+        self.zk.create(self.taskPath, value='0', ephemeral=False) # Value 0 means unassigned.
+        # Watch for data change.
+        self.zk.get_children(self.dataPath, watch=self.task_completed, include_data=True)
         
     #REACT to changes on the submitted task..                   
     def task_completed(self, data, stat):
