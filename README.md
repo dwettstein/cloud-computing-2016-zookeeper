@@ -30,10 +30,10 @@ The provided VM (see below) comes with Python pre-installed.
 
 We provide a ready-to-use template with ZooKeeper configured in standalone mode. 
 
-**[EXERCISE]** Instantiate the VM template *ZooKeeper-Ubuntu-14.04* on OpenNebula to have your own ZooKeeper service.
-Verify that you can correcly SSH into the VM. 
+~~**[EXERCISE]** Instantiate the VM template *ZooKeeper-Ubuntu-14.04* on OpenNebula to have your own ZooKeeper service.
+Verify that you can correcly SSH into the VM.~~ Done.
 
-**[EXERCISE]** Upon bootstrap, verify that the zookeeper service is up&running:
+~~**[EXERCISE]** Upon bootstrap, verify that the zookeeper service is up&running:~~ Done. Connect to VM: ssh ubuntu@172.16.2.33
 ```bash
 ubuntu@ubuntu:~⟫ service zookeeper status
 zookeeper start/running, process 26358
@@ -45,7 +45,22 @@ A common tool to inspect ZooKeeper is *zk-shell*, an interactive command line in
 This interpreter is available via the [following](https://github.com/rgs1/zk_shell) repository on GitHub.
 You can follow the indication given in *README.md* to install it with *pip*.
 
-**[EXERCISE]** Using zk-shell, create the permanent paths */master*, */tasks*, */data* and */workers*.
+~~**[EXERCISE]** Using zk-shell, create the permanent paths */master*, */tasks*, */data* and */workers*.~~ Done. Console output:
+```bash
+(CONNECTED) /> create /master 'master' false false true
+(CONNECTED) /> create /tasks 'tasks' false false true
+(CONNECTED) /> create /data 'data' false false true
+(CONNECTED) /> create /workers 'workers' false false true
+(CONNECTED) /> tree
+.
+├── data
+├── tasks
+├── workers
+├── master
+├── zookeeper
+│   ├── quota
+(CONNECTED) />
+```
 
 Hint: follow the examples given [here](https://github.com/rgs1/zk_shell#usage).
 
@@ -60,10 +75,19 @@ All details are given in the [API documentation](http://kazoo.readthedocs.org/en
 Read the documentation carefully.
 
 
-**[EXERCISE]** Try the examples given in the [online documentation](http://kazoo.readthedocs.org/en/latest/basic_usage.html) and be sure that all the libraries and dependencies are correctly installed.
+~~**[EXERCISE]** Try the examples given in the [online documentation](http://kazoo.readthedocs.org/en/latest/basic_usage.html) and be sure that all the libraries and dependencies are correctly installed.~~ Done.
 
-**[EXERCISE]** Try the *kazoo_example.py* on your VM.
-
+~~**[EXERCISE]** Try the *kazoo_example.py* on your VM.~~ Done. Console output:
+```shell
+ubuntu@ubuntu:~/zk$ python kazoo_example.py
+2016-04-19 11:11:15,766 Connecting to 127.0.0.1:2181
+2016-04-19 11:11:15,782 Sending request(xid=None): Connect(protocol_version=0, last_zxid_seen=0, time_out=10000, session_id=0, passwd='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', read_only=None)
+2016-04-19 11:11:15,796 Zookeeper connection established, state: CONNECTED
+2016-04-19 11:11:15,797 Connected to ZK
+2016-04-19 11:11:15,812 I am 'ubuntu-4791'
+2016-04-19 11:11:15,813 Sending request(xid=1): Create(path='/leader', data='', acl=[ACL(perms=31, acl_list=['ALL'], id=Id(scheme='world', id='anyone'))], flags=3)
+2016-04-19 11:11:15,928 Received response(xid=1): u'/leader0000000004'
+```
 
 ##2 - Leader Election
 

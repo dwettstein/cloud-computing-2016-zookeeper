@@ -6,7 +6,7 @@ from kazoo.exceptions import KazooException
 
 class Election:
 
-    def __init__(self, zk, path, func,args):
+    def __init__(self, zk, path, func, args):
         self.election_path = path
         self.zk = zk
 		self.is_leader = False
@@ -16,7 +16,7 @@ class Election:
 		#TO COMPLETE
 		 
     def is_leading(self):
-		#TO COMPLETE
+		return self.is_leader
 		
 	#perform a vote..	
     def ballot(self,children):
