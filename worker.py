@@ -24,11 +24,13 @@ class Worker:
         children = self.zk.get_children(workerNode.path.__str__())
         for child in children:
             print("Found child '%s' in worker '%s'." % (child.__str__(), workerNode.path.__str__()))
-            childTuple = self.zk.get(child)
-            print("childTuple: " + childTuple.__str__())
-            utils.task(childTuple)
-            dataPath = DATA_PATH + "/" + (childTuple.path.__str__().replace(WORKERS_PATH, ""))
+            #childTuple = self.zk.get(workerNode.path.__str__() + "/" + child.__str__())
+            dataPath = DATA_PATH + "/" + child
+            dataTuple = self.zk.get(dataPath)
+            print("dataTuple: " + dataTuple.__str__())
+            utils.task(dataTuple)
             self.zk.set(dataPath, '0') # Set task result into data node.
+            self.zk.delete(workerNode.path.__str__() + "/" + child)
         self.zk.get_children(self.znodePath, watch=self.assignment_change)
         
 
