@@ -19,6 +19,7 @@ class Worker:
     
     #do something upon the change on assignment    
     def assignment_change(self, workerNode):
+        self.zk.get_children(self.znodePath, watch=self.assignment_change)
         # task object: WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/a7deabb6-ecc0-4249-9fee-87e301a71747')
         print("**********")
         print(workerNode.__str__())
@@ -37,11 +38,11 @@ class Worker:
             utils.task(dataTuple)
             self.zk.set(dataPath, '0') # Set task result into data node.
             self.zk.delete(workerNode.path.__str__() + "/" + child)
-        self.zk.get_children(self.znodePath, watch=self.assignment_change)
+        
         
 
 if __name__ == '__main__':
-    zk = utils.init()    
+    zk = utils.init()
     worker = Worker(zk)
     while True:
         time.sleep(1)

@@ -21,6 +21,7 @@ class Master:
     
     #assign tasks                    
     def assign(self, tasks):
+        self.zk.get_children(TASKS_PATH, watch=self.assign)
         # children: WatchedEvent(type='CHILD', state='CONNECTED', path=u'/tasks')", data='', acl=[ACL(perms=31, acl_list=['ALL'], id=Id(scheme='world', id='anyone'))], flags=0)
         if self.master:
             tasks = self.zk.get_children(TASKS_PATH) # TASKS_PATH should be equal to tasks.path
@@ -51,7 +52,7 @@ class Master:
                     print("**********")
                     print("Assigned task '%s' to worker '%s'." % (unassignedTask.__str__(), worker.__str__()))
                     print("**********")
-        self.zk.get_children(TASKS_PATH, watch=self.assign)
+        
         
 
 if __name__ == '__main__':
