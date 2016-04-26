@@ -21,18 +21,22 @@ class Client:
         # Create task.
         self.zk.create(self.taskPath, value='0', ephemeral=False) # Value 0 means unassigned.
         # Watch for data change.
-        self.zk.get_children(self.dataPath, watch=self.task_completed, include_data=True)
+        self.zk.get_children(self.dataPath, watch=self.task_completed)
         
     #REACT to changes on the submitted task..                   
     def task_completed(self, dataNode):
+        print("**********")
         print(dataNode.__str__())
+        print("**********")
         dataList = self.zk.get_children(dataNode)
         for data in dataList:
             dataTuple = self.zk.get(data)
+            print("**********")
             print("dataTuple: " + dataTuple.__str__())
+            print("**********")
             taskId = data.__str__().replace(DATA_PATH, "")
-            #self.zk.delete(TASKS_PATH + taskId)
-            #self.zk.delete(data)
+            self.zk.delete(TASKS_PATH + taskId)
+            self.zk.delete(data)
     
     def submit_task_loop(self):
         max_iterations = 2

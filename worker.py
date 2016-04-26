@@ -20,14 +20,20 @@ class Worker:
     #do something upon the change on assignment    
     def assignment_change(self, workerNode):
         # task object: WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/a7deabb6-ecc0-4249-9fee-87e301a71747')
+        print("**********")
         print(workerNode.__str__())
+        print("**********")
         children = self.zk.get_children(workerNode.path.__str__())
         for child in children:
+            print("**********")
             print("Found child '%s' in worker '%s'." % (child.__str__(), workerNode.path.__str__()))
+            print("**********")
             #childTuple = self.zk.get(workerNode.path.__str__() + "/" + child.__str__())
             dataPath = DATA_PATH + "/" + child
             dataTuple = self.zk.get(dataPath)
+            print("**********")
             print("dataTuple: " + dataTuple.__str__())
+            print("**********")
             utils.task(dataTuple)
             self.zk.set(dataPath, '0') # Set task result into data node.
             self.zk.delete(workerNode.path.__str__() + "/" + child)
