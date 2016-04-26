@@ -126,7 +126,6 @@ A worker should:
 4. Get task id **yyy** upon assignment in **/workers/xxx**
 5. Get task data in **/data/yyy**
 6. Execute task with data
-7. Create tasks
 8. Delete assignment
 
 A client should:
