@@ -182,3 +182,5 @@ You should produce a report and commit it to your GitHub private repository.
 The report can be in txt or pdf format. 
 it should be between 5000 and 15000 characters. 
 You should create a directory `report/` in your repository and save a file `report/report.txt` or `report/report.pdf`.
+
+Deadline to deliver your solutions (source code and report): Friday 6th of May 2016, 17h00 CET.  
