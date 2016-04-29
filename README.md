@@ -148,7 +148,6 @@ A worker should:
 4. Get task id **yyy** upon assignment in **/workers/xxx**
 5. Get task data in **/data/yyy**
 6. Execute task with data
-7. Create tasks
 8. Delete assignment
 
 A client should:
@@ -185,7 +184,7 @@ Your implementation should work correctly in all following scenarios:
 
 **[EXERCISE]** Provide evidences that your implementation works correctly in the 4 mentioned scenarios. You can provide logs and detailed explanations, use tables, etc. Discuss with the both assistants to decide upon your plan of action.
 
-**[EXERCISE]** Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle). 
+**[EXERCISE]** Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle) instead of crashing.
 
 
 ##3.3 ZooKeeper in Cluster Mode
@@ -198,3 +197,12 @@ Once the cluster of ZooKeeer servers is functional, you should test your master/
 **[EXERCISE]** What differences do you observe ? 
 
 **[EXERCISE]** Let one of the ZooKeeper server fail: how your system react in this scenario ? 
+
+
+## How to deliver your solutions
+You should produce a report and commit it to your GitHub private repository.
+The report can be in text (optionally with Markdown syntax, or plain text) or pdf format. 
+it should be between 5000 and 15000 signs. 
+You should create a directory `report/` in your repository and save a file `report/report.txt` or `report/report.pdf`.
+
+Deadline to deliver your solutions (source code and report): Friday 6th of May 2016, 17h00 CET.  
