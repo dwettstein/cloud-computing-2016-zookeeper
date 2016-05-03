@@ -17,7 +17,7 @@ class Client:
         self.taskPath = TASKS_PATH + "/" + self.uuid.__str__()
         self.dataPath = DATA_PATH + "/" + self.uuid.__str__()
         # Create data.
-        self.zk.create(self.dataPath, value='2', ephemeral=False)
+        self.zk.create(self.dataPath, value='3', ephemeral=False) # A task takes 3 seconds for completion.
         # Create task.
         self.zk.create(self.taskPath, value='0', ephemeral=False) # Value 0 means unassigned.
         # Watch for data change.
@@ -42,7 +42,7 @@ class Client:
         while (current_iteration < max_iterations):
             current_iteration += 1
             self.submit_task()
-            time.sleep(5)
+            time.sleep(1)
 
 
 if __name__ == '__main__':

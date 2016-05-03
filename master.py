@@ -97,13 +97,12 @@ class Master:
         self.zk.get_children(WORKERS_PATH, watch=self.reset_to_unassigned)
         if self.election.is_leading:
             print("**********")
-            print("Deleted worker: " + deleted_worker.path)
+            print("Deleted worker: " + deleted_worker)
             print("**********")
-            deleted_worker_guid = deleted_worker.path.replace(WORKERS_PATH + "/", "")
             all_tasks = self.zk.get_children(TASKS_PATH)
             for task in all_tasks:
                 task_node = self.zk.get(TASKS_PATH + "/" + task.__str__())
-                if task_node[0].__str__() ==  deleted_worker_guid:
+                if task_node[0].__str__() ==  deleted_worker.__str__():
                     self.zk.set(TASKS_PATH + "/" + task_node.__str__(), '0')
             self.assign(None)
 
