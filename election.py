@@ -8,7 +8,7 @@ ELECTION_PATH="/election"
 
 class Election:
 
-    def __init__(self, zk, guid, func, args):
+    def __init__(self, zk, guid, func, prev_election):
         self.election_path = ELECTION_PATH + "/" + str(guid) + "_"
         self.zk = zk
         self.is_leader = False
@@ -17,11 +17,11 @@ class Election:
             raise SystemError
         self.real_path = self.zk.create(self.election_path, ephemeral=True, sequence=True)
         print("**********")
-        print("Creaded node real path: " + self.real_path)
-        print("Watch node: " + args[0])
+        print("Creaded node real path: " + str(self.real_path))
+        print("Watch node: " + str(prev_election))
         print("Callback function: " + str(func))
         print("**********")
-        self.zk.get(args[0], watch=func)
+        self.zk.get(prev_election, watch=func)
         
         def signal_handler(signal, frame):
             print(frame)
