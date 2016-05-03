@@ -5,30 +5,47 @@ from utils import MASTER_PATH
 from utils import TASKS_PATH
 from utils import DATA_PATH
 from utils import WORKERS_PATH
+from utils import ELECTION_PATH
 
 
 class Master:
 
     #initialize the master
     def __init__(self, zk, prev_election):
-        self.master = True if prev_election == None else False
         self.zk = zk
         self.uuid = uuid.uuid4()
         self.election = Election(self.zk, self.uuid, self.start_election, prev_election)
-        
         self.znodePath = MASTER_PATH + "/" + self.uuid.__str__()
         self.zk.create(self.znodePath, ephemeral=False)
         # Watch for children aka task assignments.
         self.zk.get_children(TASKS_PATH, watch=self.assign)
     
     def start_election(self, election_child):
-        print("************* Election Child: " + election_child.__str__)
-    
+        print("**********")
+        print("Deleted election child: " + str(election_child))
+        print("**********")
+        splits = str(election_child.path).split(str='_')
+        child_guid = splits[0].replace(ELECTION_PATH + "/", "")
+        self.zk.delete(MASTER_PATH + "/" + child_guid)
+        election_children = self.zk.get_children(ELECTION_PATH)
+        new_master = None
+        least_number = sys.maxint
+        for child in election_children:
+            child_splits = str(child).split(str='_')
+            if (child_splits[1] < least_number):
+                least_number = child_splits[1]
+                new_master = child_splits[0]
+        print("New elected master: " + new_master)
+        for master in utils.master_list:
+            if str(master.uuid) == new_master:
+                master.election.is_leader = True
+                return
+        
     #assign tasks                    
     def assign(self, tasks):
         self.zk.get_children(TASKS_PATH, watch=self.assign)
         # children: WatchedEvent(type='CHILD', state='CONNECTED', path=u'/tasks')", data='', acl=[ACL(perms=31, acl_list=['ALL'], id=Id(scheme='world', id='anyone'))], flags=0)
-        if self.master:
+        if self.election.is_leading:
             tasks = self.zk.get_children(TASKS_PATH) # TASKS_PATH should be equal to tasks.path
             unassignedTasks = []
             for task in tasks:
@@ -67,5 +84,6 @@ if __name__ == '__main__':
     for i in range(5):
         master = Master(zk, prev_election)
         prev_election = master.election
+        utils.master_list.__add__(master)
     while True:
         time.sleep(1)

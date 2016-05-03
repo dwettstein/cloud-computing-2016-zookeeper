@@ -8,6 +8,9 @@ MASTER_PATH="/master"
 TASKS_PATH="/tasks"
 DATA_PATH="/data"
 WORKERS_PATH="/workers"
+ELECTION_PATH="/election"
+
+master_list = []
 
 def task(data):
     logging.debug("TASK IN")

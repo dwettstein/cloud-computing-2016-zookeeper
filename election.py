@@ -3,15 +3,15 @@ import time, socket, os, uuid, sys, kazoo, logging, signal, inspect, utils
 from kazoo.client import KazooClient
 from kazoo.client import KazooState
 from kazoo.exceptions import KazooException
+from utils import ELECTION_PATH
 
-ELECTION_PATH="/election"
 
 class Election:
 
     def __init__(self, zk, guid, func, prev_election):
         self.election_path = ELECTION_PATH + "/" + str(guid) + "_"
         self.zk = zk
-        self.is_leader = False
+        self.is_leader = True if prev_election == None else False
         if not (inspect.isfunction(func)) and not(inspect.ismethod(func)):
             logging.debug("not a function "+str(func))
             raise SystemError
@@ -21,11 +21,16 @@ class Election:
         print("Watch node: " + str(prev_election))
         print("Callback function: " + str(func))
         print("**********")
-        self.zk.get(prev_election, watch=func)
+        if prev_election != None:
+            self.zk.get(prev_election.real_path, watch=func)
         
         def signal_handler(signal, frame):
-            print(frame)
-            del self
+            zk = utils.init()
+            election_children = zk.get_children(ELECTION_PATH)
+            for child in election_children:
+                print("Deleting election child: " + str(child))
+                zk.delete(ELECTION_PATH + "/" + child)
+                return
         signal.signal(signal.SIGTERM, signal_handler)
     
     def is_leading(self):
