@@ -37,8 +37,7 @@ class Master:
             if str(master.uuid) == child_guid:
                 node_to_delete = master
         node_to_delete.election.is_leader = False
-        utils.master_list.__delitem__(note_to_delete)       
-        
+        utils.master_list.remove(node_to_delete)
         for child in election_children:
             child_splits = str(child).split("_")
             child_tuple = (child_splits[0], child_splits[1])
