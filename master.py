@@ -101,13 +101,11 @@ class Master:
     def reset_to_unassigned(self, deleted_worker):
         self.zk.get_children(WORKERS_PATH, watch=self.reset_to_unassigned)
         if self.election.is_leading:
-            print("**********")
-            print("Deleted worker: " + deleted_worker.__str__())
-            print("**********")
+            all_workers = self.zk.get_children(WORKERS_PATH)
             all_tasks = self.zk.get_children(TASKS_PATH)
             for task in all_tasks:
                 task_node = self.zk.get(TASKS_PATH + "/" + task.__str__())
-                if task_node[0].__str__() ==  deleted_worker.__str__():
+                if !(task_node[0].__str__() in all_workers):
                     self.zk.set(TASKS_PATH + "/" + task_node.__str__(), '0')
             self.assign(None)
 

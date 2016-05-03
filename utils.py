@@ -21,7 +21,7 @@ def task(data):
 
 def init():
     zkhost = "127.0.0.1:2181" #default ZK host
-    logging.basicConfig(format='%(asctime)s %(message)s',level=logging.DEBUG)
+    logging.basicConfig(format='%(asctime)s %(message)s',level=logging.INFO)
 
     if len(sys.argv) == 2:
         zkhost=sys.argv[2]
