@@ -40,8 +40,8 @@ class Master:
         new_master = sorted_list[0]
         # Check if first item of cutted list is equal to the new master.
         cutted_sorted_list = [elem for elem in sorted_list if elem[1] < child_number]
-        next_election_child = cutted_sorted_list[len(cutted_sorted_list) - 1]
-        if next_election_child[0] != new_master[0]:
+        if len(cutted_sorted_list) > 0
+            next_election_child = cutted_sorted_list[len(cutted_sorted_list) - 1]
             self.zk.get(ELECTION_PATH + "/" + next_election_child[0] + "_" + next_election_child[1], watch=self.start_election)
             # if (child_splits[1] < least_number):
                 # least_number = child_splits[1]
