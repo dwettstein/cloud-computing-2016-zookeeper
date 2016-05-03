@@ -22,7 +22,7 @@ class Worker:
             worker_children = zk.get_children(WORKERS_PATH)
             for child in worker_children:
                 print("Deleting worker child: " + str(child))
-                zk.delete(WORKERS_PATH + "/" + child)
+                zk.delete(WORKERS_PATH + "/" + child, recursive=True)
                 return
         signal.signal(signal.SIGTERM, signal_handler)
     
@@ -41,9 +41,9 @@ class Worker:
             #childTuple = self.zk.get(workerNode.path.__str__() + "/" + child.__str__())
             dataPath = DATA_PATH + "/" + child
             dataTuple = self.zk.get(dataPath)
-            print("**********")
-            print("dataTuple: " + dataTuple.__str__())
-            print("**********")
+            #print("**********")
+            #print("dataTuple: " + dataTuple.__str__())
+            #print("**********")
             utils.task(dataTuple)
             self.zk.set(dataPath, '0') # Set task result into data node.
             self.zk.delete(workerNode.path.__str__() + "/" + child)
