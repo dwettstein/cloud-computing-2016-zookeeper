@@ -19,6 +19,8 @@ class Master:
         self.zk.create(self.znodePath, ephemeral=False)
         # Watch for children aka task assignments.
         self.zk.get_children(TASKS_PATH, watch=self.assign)
+        # Watch for worker deletion.
+        self.zk.get_children(WORKERS_PATH, watch=self.reset_to_unassigned)
     
     def start_election(self, election_child):
         print("**********")
@@ -58,7 +60,7 @@ class Master:
                 return
         
     #assign tasks                    
-    def assign(self, tasks):
+    def assign(self, tasks_event):
         self.zk.get_children(TASKS_PATH, watch=self.assign)
         # children: WatchedEvent(type='CHILD', state='CONNECTED', path=u'/tasks')", data='', acl=[ACL(perms=31, acl_list=['ALL'], id=Id(scheme='world', id='anyone'))], flags=0)
         if self.election.is_leading:
@@ -86,11 +88,24 @@ class Master:
                         free_worker = worker
                 if free_worker != None: 
                     self.zk.create(WORKERS_PATH + "/" + worker.__str__() + "/" + unassignedTask.__str__())
-                    self.zk.set(TASKS_PATH + "/" + unassignedTask, '1') # set value to "assigned"
+                    self.zk.set(TASKS_PATH + "/" + unassignedTask, worker.__str__()) # set value to assigned worker guid
                     print("**********")
                     print("Assigned task '%s' to worker '%s'." % (unassignedTask.__str__(), worker.__str__()))
                     print("**********")
-        
+
+    def reset_to_unassigned(self, deleted_worker):
+        self.zk.get_children(WORKERS_PATH, watch=self.reset_to_unassigned)
+        if self.election.is_leading:
+            print("**********")
+            print("Deleted worker: " + deleted_worker.path)
+            print("**********")
+            deleted_worker_guid = deleted_worker.path.replace(WORKERS_PATH + "/", "")
+            all_tasks = self.zk.get_children(TASKS_PATH)
+            for task in all_tasks:
+                task_node = self.zk.get(TASKS_PATH + "/" + task.__str__())
+                if task_node[0].__str__() ==  deleted_worker_guid:
+                    self.zk.set(TASKS_PATH + "/" + task_node.__str__(), '0')
+            self.assign(None)
 
 if __name__ == '__main__':
     zk = utils.init()

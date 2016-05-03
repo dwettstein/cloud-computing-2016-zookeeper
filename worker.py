@@ -17,6 +17,15 @@ class Worker:
         # Watch for children aka task assignments.
         self.zk.get_children(self.znodePath, watch=self.assignment_change)
     
+        def signal_handler(signal, frame):
+            zk = utils.init()
+            worker_children = zk.get_children(WORKERS_PATH)
+            for child in worker_children:
+                print("Deleting worker child: " + str(child))
+                zk.delete(WORKERS_PATH + "/" + child)
+                return
+        signal.signal(signal.SIGTERM, signal_handler)
+    
     #do something upon the change on assignment    
     def assignment_change(self, workerNode):
         self.zk.get_children(self.znodePath, watch=self.assignment_change)
@@ -38,11 +47,11 @@ class Worker:
             utils.task(dataTuple)
             self.zk.set(dataPath, '0') # Set task result into data node.
             self.zk.delete(workerNode.path.__str__() + "/" + child)
-        
-        
+
 
 if __name__ == '__main__':
     zk = utils.init()
-    worker = Worker(zk)
+    for i in range(5):
+        worker = Worker(zk)
     while True:
         time.sleep(1)
