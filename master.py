@@ -26,18 +26,29 @@ class Master:
         print("**********")
         splits = str(election_child.path).split(str='_')
         child_guid = splits[0].replace(ELECTION_PATH + "/", "")
+        child_number = splits[1]
         self.zk.delete(MASTER_PATH + "/" + child_guid)
         election_children = self.zk.get_children(ELECTION_PATH)
-        new_master = None
-        least_number = sys.maxint
+        election_nodes = []
+        #new_master = None
+        #least_number = sys.maxint
         for child in election_children:
             child_splits = str(child).split(str='_')
-            if (child_splits[1] < least_number):
-                least_number = child_splits[1]
-                new_master = child_splits[0]
-        print("New elected master: " + new_master)
+            child_tuple = (child_splits[0], child_splits[1])
+            election_nodes.append(child_tuple)
+        sorted_list = sorted(election_nodes, key=lambda x: x[1])
+        new_master = sorted_list[0]
+        # Check if first item of cutted list is equal to the new master.
+        cutted_sorted_list = [elem for elem in sorted_list if elem[1] < child_number]
+        next_election_child = cutted_sorted_list[len(cutted_sorted_list) - 1]
+        if next_election_child[0] != new_master[0]:
+            self.zk.get(ELECTION_PATH + "/" + next_election_child[0] + "_" + next_election_child[1], watch=self.start_election)
+            # if (child_splits[1] < least_number):
+                # least_number = child_splits[1]
+                # new_master = child_splits[0]
+        print("New elected master: " + new_master[0])
         for master in utils.master_list:
-            if str(master.uuid) == new_master:
+            if str(master.uuid) == new_master[0]:
                 master.election.is_leader = True
                 return
         
@@ -75,7 +86,6 @@ class Master:
                     print("Assigned task '%s' to worker '%s'." % (unassignedTask.__str__(), worker.__str__()))
                     print("**********")
         
-        
 
 if __name__ == '__main__':
     zk = utils.init()
@@ -84,6 +94,6 @@ if __name__ == '__main__':
     for i in range(5):
         master = Master(zk, prev_election)
         prev_election = master.election
-        utils.master_list.__add__(master)
+        utils.master_list.append(master)
     while True:
         time.sleep(1)
