@@ -1,0 +1,486 @@
+#####################################################################################################################################
+# zk-shell localhost
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ zk-shell localhost
+Welcome to zk-shell (1.1.1)
+(CLOSED) />
+(CONNECTED) /> tree
+.
+├── data
+├── election
+│   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f_0000000001
+│   ├── 0b2cd4be-1a27-4668-961a-0f3583b5a710_0000000000
+├── tasks
+├── workers
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
+├── master
+│   ├── 0b2cd4be-1a27-4668-961a-0f3583b5a710
+│   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
+├── zookeeper
+│   ├── quota
+(CONNECTED) /> tree
+.
+├── data
+│   ├── ec334a07-e6aa-4d80-8142-22cfd832b3d3
+│   ├── 8d57784e-7968-4961-91a2-3b15f943570f
+│   ├── 6ffb7f69-6b15-42be-9e24-18e391906cac
+│   ├── 4f5e8ca0-406e-4a31-b036-56ff08cc7146
+│   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── election
+│   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f_0000000001
+│   ├── 0b2cd4be-1a27-4668-961a-0f3583b5a710_0000000000
+├── tasks
+│   ├── ec334a07-e6aa-4d80-8142-22cfd832b3d3
+│   ├── 8d57784e-7968-4961-91a2-3b15f943570f
+│   ├── 6ffb7f69-6b15-42be-9e24-18e391906cac
+│   ├── 4f5e8ca0-406e-4a31-b036-56ff08cc7146
+│   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── workers
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   │   ├── ec334a07-e6aa-4d80-8142-22cfd832b3d3
+│   │   ├── 8d57784e-7968-4961-91a2-3b15f943570f
+│   │   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
+│   │   ├── 6ffb7f69-6b15-42be-9e24-18e391906cac
+│   │   ├── 4f5e8ca0-406e-4a31-b036-56ff08cc7146
+│   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── master
+│   ├── 0b2cd4be-1a27-4668-961a-0f3583b5a710
+│   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
+├── zookeeper
+│   ├── quota
+(CONNECTED) />
+Exit? (y|n) y
+ubuntu@ubuntu:~/zk$ kill 12468
+ubuntu@ubuntu:~/zk$ zk-shell localhost
+Welcome to zk-shell (1.1.1)
+(CLOSED) />
+(CONNECTED) /> tree
+.
+├── data
+│   ├── 2e10712f-f2bb-4ec2-9eb7-fe85d2875628
+│   ├── 191115a5-52f0-4607-a2a6-617e03ea1f18
+│   ├── 84c7356f-fca7-471d-9e66-2a3a764e7789
+│   ├── c7a19f6b-da98-47b6-baaa-57da5402d71d
+│   ├── 5b1c1c46-c6d6-4da7-8d77-9fc8befef30f
+│   ├── b0a67415-8e3f-45e3-8d31-c8cc089cc26a
+│   ├── bc56ce96-3878-41ee-b02f-acd4fcb4ffde
+│   ├── 569fddf0-4bd9-4e23-aee3-e427d2314b2d
+│   ├── 78ac8b43-db17-4d46-85be-151a4a534bbc
+│   ├── 61f0a33c-5cef-4199-b025-de915c4ca02c
+│   ├── e2dd9fb5-8920-4f82-b169-ffcfcd603ca9
+│   ├── 8d11489a-752e-4577-ab27-ebfb6c5364cc
+│   ├── dc50a57e-9ba8-4a29-9ca4-2b313d2788d9
+│   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+│   ├── b8dccf69-414f-4694-bd34-1059468b7e96
+│   ├── e0ba0485-2779-45f6-b913-043a072f3651
+│   ├── 2c564dee-1051-4f56-98ce-9afc47cff839
+│   ├── 84773473-a3f2-4460-93ef-f22639c33aac
+│   ├── 4b65e187-fced-4e14-8de0-7990a3df1fad
+│   ├── a9954e55-c04d-4108-a0d7-1b45ea3d476e
+│   ├── ed12f0af-2c35-4b9f-800c-5b8ca007dc8d
+│   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── aa322bd8-25d0-4d9e-a4d6-ec2ca4617746
+│   ├── d290b769-be43-47d5-8df4-3277ca3a8a0d
+│   ├── d36339fb-0d2f-44e7-af83-a9a4b3b9ba87
+│   ├── 6cbdeed9-bc96-4094-b43c-80b8699422d7
+│   ├── d031b3d7-9edf-4f82-9527-2e2a1f5b8372
+│   ├── 2d97ae08-b7c7-45c9-bed1-a51c447cf7e5
+│   ├── db0073d6-caff-4bd9-b2ce-01a4219bdbee
+│   ├── 8378494b-e499-4d1c-b9dc-7c10dfa8038c
+│   ├── 97422376-fa5c-40cd-81f6-ce74484fa8a3
+│   ├── 29eff737-4b51-41d9-9e59-9363c82bf127
+│   ├── a99f9d14-13a4-45aa-8fbc-1ba8d5a4f11d
+├── election
+│   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f_0000000001
+├── tasks
+│   ├── 2e10712f-f2bb-4ec2-9eb7-fe85d2875628
+│   ├── 191115a5-52f0-4607-a2a6-617e03ea1f18
+│   ├── 84c7356f-fca7-471d-9e66-2a3a764e7789
+│   ├── c7a19f6b-da98-47b6-baaa-57da5402d71d
+│   ├── 5b1c1c46-c6d6-4da7-8d77-9fc8befef30f
+│   ├── b0a67415-8e3f-45e3-8d31-c8cc089cc26a
+│   ├── bc56ce96-3878-41ee-b02f-acd4fcb4ffde
+│   ├── 569fddf0-4bd9-4e23-aee3-e427d2314b2d
+│   ├── 78ac8b43-db17-4d46-85be-151a4a534bbc
+│   ├── 61f0a33c-5cef-4199-b025-de915c4ca02c
+│   ├── e2dd9fb5-8920-4f82-b169-ffcfcd603ca9
+│   ├── 8d11489a-752e-4577-ab27-ebfb6c5364cc
+│   ├── dc50a57e-9ba8-4a29-9ca4-2b313d2788d9
+│   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+│   ├── b8dccf69-414f-4694-bd34-1059468b7e96
+│   ├── e0ba0485-2779-45f6-b913-043a072f3651
+│   ├── 2c564dee-1051-4f56-98ce-9afc47cff839
+│   ├── 84773473-a3f2-4460-93ef-f22639c33aac
+│   ├── 4b65e187-fced-4e14-8de0-7990a3df1fad
+│   ├── a9954e55-c04d-4108-a0d7-1b45ea3d476e
+│   ├── ed12f0af-2c35-4b9f-800c-5b8ca007dc8d
+│   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── aa322bd8-25d0-4d9e-a4d6-ec2ca4617746
+│   ├── d290b769-be43-47d5-8df4-3277ca3a8a0d
+│   ├── d36339fb-0d2f-44e7-af83-a9a4b3b9ba87
+│   ├── 6cbdeed9-bc96-4094-b43c-80b8699422d7
+│   ├── d031b3d7-9edf-4f82-9527-2e2a1f5b8372
+│   ├── 2d97ae08-b7c7-45c9-bed1-a51c447cf7e5
+│   ├── db0073d6-caff-4bd9-b2ce-01a4219bdbee
+│   ├── 8378494b-e499-4d1c-b9dc-7c10dfa8038c
+│   ├── 97422376-fa5c-40cd-81f6-ce74484fa8a3
+│   ├── 29eff737-4b51-41d9-9e59-9363c82bf127
+│   ├── a99f9d14-13a4-45aa-8fbc-1ba8d5a4f11d
+├── workers
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   │   ├── b8dccf69-414f-4694-bd34-1059468b7e96
+│   │   ├── 191115a5-52f0-4607-a2a6-617e03ea1f18
+│   │   ├── c7a19f6b-da98-47b6-baaa-57da5402d71d
+│   │   ├── 2c564dee-1051-4f56-98ce-9afc47cff839
+│   │   ├── 84773473-a3f2-4460-93ef-f22639c33aac
+│   │   ├── a9954e55-c04d-4108-a0d7-1b45ea3d476e
+│   │   ├── b0a67415-8e3f-45e3-8d31-c8cc089cc26a
+│   │   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   │   ├── d290b769-be43-47d5-8df4-3277ca3a8a0d
+│   │   ├── 61f0a33c-5cef-4199-b025-de915c4ca02c
+│   │   ├── d36339fb-0d2f-44e7-af83-a9a4b3b9ba87
+│   │   ├── d031b3d7-9edf-4f82-9527-2e2a1f5b8372
+│   │   ├── 2d97ae08-b7c7-45c9-bed1-a51c447cf7e5
+│   │   ├── db0073d6-caff-4bd9-b2ce-01a4219bdbee
+│   │   ├── 97422376-fa5c-40cd-81f6-ce74484fa8a3
+│   │   ├── 29eff737-4b51-41d9-9e59-9363c82bf127
+│   │   ├── a99f9d14-13a4-45aa-8fbc-1ba8d5a4f11d
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
+│   │   ├── 2e10712f-f2bb-4ec2-9eb7-fe85d2875628
+│   │   ├── e0ba0485-2779-45f6-b913-043a072f3651
+│   │   ├── 84c7356f-fca7-471d-9e66-2a3a764e7789
+│   │   ├── 5b1c1c46-c6d6-4da7-8d77-9fc8befef30f
+│   │   ├── 4b65e187-fced-4e14-8de0-7990a3df1fad
+│   │   ├── ed12f0af-2c35-4b9f-800c-5b8ca007dc8d
+│   │   ├── bc56ce96-3878-41ee-b02f-acd4fcb4ffde
+│   │   ├── 569fddf0-4bd9-4e23-aee3-e427d2314b2d
+│   │   ├── aa322bd8-25d0-4d9e-a4d6-ec2ca4617746
+│   │   ├── 78ac8b43-db17-4d46-85be-151a4a534bbc
+│   │   ├── e2dd9fb5-8920-4f82-b169-ffcfcd603ca9
+│   │   ├── 6cbdeed9-bc96-4094-b43c-80b8699422d7
+│   │   ├── 8378494b-e499-4d1c-b9dc-7c10dfa8038c
+│   │   ├── 8d11489a-752e-4577-ab27-ebfb6c5364cc
+│   │   ├── dc50a57e-9ba8-4a29-9ca4-2b313d2788d9
+│   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── master
+│   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
+├── zookeeper
+│   ├── quota
+(CONNECTED) /> tree
+.
+├── data
+│   ├── 191115a5-52f0-4607-a2a6-617e03ea1f18
+│   ├── c7a19f6b-da98-47b6-baaa-57da5402d71d
+│   ├── 61f0a33c-5cef-4199-b025-de915c4ca02c
+│   ├── 8d11489a-752e-4577-ab27-ebfb6c5364cc
+│   ├── dc50a57e-9ba8-4a29-9ca4-2b313d2788d9
+│   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+│   ├── 2c564dee-1051-4f56-98ce-9afc47cff839
+│   ├── 84773473-a3f2-4460-93ef-f22639c33aac
+│   ├── a9954e55-c04d-4108-a0d7-1b45ea3d476e
+│   ├── d290b769-be43-47d5-8df4-3277ca3a8a0d
+│   ├── d031b3d7-9edf-4f82-9527-2e2a1f5b8372
+│   ├── db0073d6-caff-4bd9-b2ce-01a4219bdbee
+│   ├── 8378494b-e499-4d1c-b9dc-7c10dfa8038c
+│   ├── 97422376-fa5c-40cd-81f6-ce74484fa8a3
+│   ├── 29eff737-4b51-41d9-9e59-9363c82bf127
+│   ├── a99f9d14-13a4-45aa-8fbc-1ba8d5a4f11d
+├── election
+│   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f_0000000001
+├── tasks
+│   ├── 191115a5-52f0-4607-a2a6-617e03ea1f18
+│   ├── c7a19f6b-da98-47b6-baaa-57da5402d71d
+│   ├── 61f0a33c-5cef-4199-b025-de915c4ca02c
+│   ├── 8d11489a-752e-4577-ab27-ebfb6c5364cc
+│   ├── dc50a57e-9ba8-4a29-9ca4-2b313d2788d9
+│   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+│   ├── 2c564dee-1051-4f56-98ce-9afc47cff839
+│   ├── 84773473-a3f2-4460-93ef-f22639c33aac
+│   ├── a9954e55-c04d-4108-a0d7-1b45ea3d476e
+│   ├── d290b769-be43-47d5-8df4-3277ca3a8a0d
+│   ├── d031b3d7-9edf-4f82-9527-2e2a1f5b8372
+│   ├── db0073d6-caff-4bd9-b2ce-01a4219bdbee
+│   ├── 8378494b-e499-4d1c-b9dc-7c10dfa8038c
+│   ├── 97422376-fa5c-40cd-81f6-ce74484fa8a3
+│   ├── 29eff737-4b51-41d9-9e59-9363c82bf127
+│   ├── a99f9d14-13a4-45aa-8fbc-1ba8d5a4f11d
+├── workers
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   │   ├── 191115a5-52f0-4607-a2a6-617e03ea1f18
+│   │   ├── c7a19f6b-da98-47b6-baaa-57da5402d71d
+│   │   ├── 2c564dee-1051-4f56-98ce-9afc47cff839
+│   │   ├── 84773473-a3f2-4460-93ef-f22639c33aac
+│   │   ├── a9954e55-c04d-4108-a0d7-1b45ea3d476e
+│   │   ├── d290b769-be43-47d5-8df4-3277ca3a8a0d
+│   │   ├── 61f0a33c-5cef-4199-b025-de915c4ca02c
+│   │   ├── d031b3d7-9edf-4f82-9527-2e2a1f5b8372
+│   │   ├── db0073d6-caff-4bd9-b2ce-01a4219bdbee
+│   │   ├── 97422376-fa5c-40cd-81f6-ce74484fa8a3
+│   │   ├── 29eff737-4b51-41d9-9e59-9363c82bf127
+│   │   ├── a99f9d14-13a4-45aa-8fbc-1ba8d5a4f11d
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
+│   │   ├── 8378494b-e499-4d1c-b9dc-7c10dfa8038c
+│   │   ├── 8d11489a-752e-4577-ab27-ebfb6c5364cc
+│   │   ├── dc50a57e-9ba8-4a29-9ca4-2b313d2788d9
+│   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── master
+│   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
+├── zookeeper
+│   ├── quota
+(CONNECTED) />
+Exit? (y|n) y
+ubuntu@ubuntu:~/zk$
+
+
+#####################################################################################################################################
+# Master
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ python master.py
+2016-05-03 16:17:27,101 Connecting to 127.0.0.1:2181
+2016-05-03 16:17:27,106 Zookeeper connection established, state: CONNECTED
+Creaded node real path: /election/0b2cd4be-1a27-4668-961a-0f3583b5a710_0000000000
+Watch node: None
+Callback function: <bound method Master.start_election of <__main__.Master instance at 0x7fcc65875e18>>
+Creaded node real path: /election/10cfdca4-d21a-49b8-b26d-2fbfc8163b2f_0000000001
+Watch node: <election.Election instance at 0x7fcc65875f80>
+Callback function: <bound method Master.start_election of <__main__.Master instance at 0x7fcc65882200>>
+Assigned task '2ee74797-aa51-45b6-9277-c2630f5dcaf9' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '4f5e8ca0-406e-4a31-b036-56ff08cc7146' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task 'ec334a07-e6aa-4d80-8142-22cfd832b3d3' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '6ffb7f69-6b15-42be-9e24-18e391906cac' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task '56d4d85e-da81-4aed-8a48-e9553b2aed92' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '8d57784e-7968-4961-91a2-3b15f943570f' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task 'f9d3d07e-5d36-4ac9-b719-821061c5e74c' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task 'd36339fb-0d2f-44e7-af83-a9a4b3b9ba87' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '569fddf0-4bd9-4e23-aee3-e427d2314b2d' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task '38b619f0-ef39-4d67-b609-313e6e2187b2' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '4b65e187-fced-4e14-8de0-7990a3df1fad' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task '5b1c1c46-c6d6-4da7-8d77-9fc8befef30f' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task 'b8dccf69-414f-4694-bd34-1059468b7e96' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '6cbdeed9-bc96-4094-b43c-80b8699422d7' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task '2d97ae08-b7c7-45c9-bed1-a51c447cf7e5' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '78ac8b43-db17-4d46-85be-151a4a534bbc' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task 'b0a67415-8e3f-45e3-8d31-c8cc089cc26a' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '2e10712f-f2bb-4ec2-9eb7-fe85d2875628' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+2016-05-03 16:18:03,864 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:03,869 Zookeeper connection established, state: CONNECTED
+Deleting election child: 0b2cd4be-1a27-4668-961a-0f3583b5a710_0000000000
+Deleted election child: WatchedEvent(type='DELETED', state='CONNECTED', path=u'/election/0b2cd4be-1a27-4668-961a-0f3583b5a710_0000000000')
+New elected master: 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
+Assigned task '8d11489a-752e-4577-ab27-ebfb6c5364cc' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task '29eff737-4b51-41d9-9e59-9363c82bf127' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+2016-05-03 16:18:04,663 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:04,668 Zookeeper connection established, state: CONNECTED
+Assigned task '8378494b-e499-4d1c-b9dc-7c10dfa8038c' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+2016-05-03 16:18:05,096 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:05,100 Zookeeper connection established, state: CONNECTED
+Assigned task '2c564dee-1051-4f56-98ce-9afc47cff839' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+2016-05-03 16:18:05,488 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:05,492 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:05,766 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:05,771 Zookeeper connection established, state: CONNECTED
+Assigned task 'e0ba0485-2779-45f6-b913-043a072f3651' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task '97422376-fa5c-40cd-81f6-ce74484fa8a3' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+2016-05-03 16:18:06,255 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:06,260 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:06,507 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:06,512 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:06,728 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:06,733 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:06,897 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:06,901 Zookeeper connection established, state: CONNECTED
+Assigned task 'a9954e55-c04d-4108-a0d7-1b45ea3d476e' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+2016-05-03 16:18:07,109 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:07,113 Zookeeper connection established, state: CONNECTED
+Assigned task 'bc56ce96-3878-41ee-b02f-acd4fcb4ffde' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+2016-05-03 16:18:07,303 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:07,307 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:07,502 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:07,506 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:07,740 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:07,743 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:07,926 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:07,929 Zookeeper connection established, state: CONNECTED
+Assigned task 'db0073d6-caff-4bd9-b2ce-01a4219bdbee' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+2016-05-03 16:18:08,136 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:08,141 Zookeeper connection established, state: CONNECTED
+Assigned task 'dc50a57e-9ba8-4a29-9ca4-2b313d2788d9' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+2016-05-03 16:18:08,336 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:08,340 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:08,574 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:08,578 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:08,775 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:08,779 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:08,988 Connecting to 127.0.0.1:2181
+Assigned task '84773473-a3f2-4460-93ef-f22639c33aac' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+2016-05-03 16:18:08,999 Zookeeper connection established, state: CONNECTED
+2016-05-03 16:18:09,209 Connecting to 127.0.0.1:2181
+2016-05-03 16:18:09,213 Zookeeper connection established, state: CONNECTED
+Assigned task 'd290b769-be43-47d5-8df4-3277ca3a8a0d' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task 'e2dd9fb5-8920-4f82-b169-ffcfcd603ca9' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task 'c7a19f6b-da98-47b6-baaa-57da5402d71d' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task 'aa322bd8-25d0-4d9e-a4d6-ec2ca4617746' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task 'a99f9d14-13a4-45aa-8fbc-1ba8d5a4f11d' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '84c7356f-fca7-471d-9e66-2a3a764e7789' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task 'd031b3d7-9edf-4f82-9527-2e2a1f5b8372' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '61f0a33c-5cef-4199-b025-de915c4ca02c' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task 'ed12f0af-2c35-4b9f-800c-5b8ca007dc8d' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Assigned task '191115a5-52f0-4607-a2a6-617e03ea1f18' to worker '00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Assigned task '38e79c95-14ac-435e-b5a8-9bc006ba00a1' to worker '236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+^C2016-05-03 16:19:19,484 Closing connection to 127.0.0.1:2181
+2016-05-03 16:19:19,484 Zookeeper session lost, state: CLOSED
+ubuntu@ubuntu:~/zk$
+
+
+#####################################################################################################################################
+# Worker
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ python worker.py
+2016-05-03 16:17:28,522 Connecting to 127.0.0.1:2181
+2016-05-03 16:17:28,527 Zookeeper connection established, state: CONNECTED
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab')
+Found child '2ee74797-aa51-45b6-9277-c2630f5dcaf9' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8')
+Found child '6ffb7f69-6b15-42be-9e24-18e391906cac' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '4f5e8ca0-406e-4a31-b036-56ff08cc7146' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab')
+Found child 'ec334a07-e6aa-4d80-8142-22cfd832b3d3' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Found child '38b619f0-ef39-4d67-b609-313e6e2187b2' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Found child '8d57784e-7968-4961-91a2-3b15f943570f' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Found child 'd36339fb-0d2f-44e7-af83-a9a4b3b9ba87' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Found child 'b8dccf69-414f-4694-bd34-1059468b7e96' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Found child '2d97ae08-b7c7-45c9-bed1-a51c447cf7e5' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Found child 'b0a67415-8e3f-45e3-8d31-c8cc089cc26a' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+Found child '56d4d85e-da81-4aed-8a48-e9553b2aed92' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8')
+Found child '2e10712f-f2bb-4ec2-9eb7-fe85d2875628' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child 'e0ba0485-2779-45f6-b913-043a072f3651' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '84c7356f-fca7-471d-9e66-2a3a764e7789' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '5b1c1c46-c6d6-4da7-8d77-9fc8befef30f' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '4b65e187-fced-4e14-8de0-7990a3df1fad' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '38e79c95-14ac-435e-b5a8-9bc006ba00a1' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child 'ed12f0af-2c35-4b9f-800c-5b8ca007dc8d' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child 'bc56ce96-3878-41ee-b02f-acd4fcb4ffde' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '569fddf0-4bd9-4e23-aee3-e427d2314b2d' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child 'aa322bd8-25d0-4d9e-a4d6-ec2ca4617746' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '78ac8b43-db17-4d46-85be-151a4a534bbc' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child 'e2dd9fb5-8920-4f82-b169-ffcfcd603ca9' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '6cbdeed9-bc96-4094-b43c-80b8699422d7' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '8378494b-e499-4d1c-b9dc-7c10dfa8038c' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child '8d11489a-752e-4577-ab27-ebfb6c5364cc' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child 'dc50a57e-9ba8-4a29-9ca4-2b313d2788d9' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+Found child 'f9d3d07e-5d36-4ac9-b719-821061c5e74c' in worker '/workers/236f49f7-281b-4ac0-8b0b-56f4d7a229b8'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab')
+Found child '191115a5-52f0-4607-a2a6-617e03ea1f18' in worker '/workers/00338d0b-3c10-47e4-bf37-24b32062b3ab'.
+^C2016-05-03 16:19:21,507 Closing connection to 127.0.0.1:2181
+2016-05-03 16:19:21,508 Zookeeper session lost, state: CLOSED
+2016-05-03 16:19:21,707 Exception in worker queue thread
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/kazoo/handlers/threading.py", line 99, in _thread_worker
+    func()
+  File "/usr/local/lib/python2.7/dist-packages/kazoo/handlers/threading.py", line 196, in <lambda>
+    self.callback_queue.put(lambda: callback.func(*callback.args))
+  File "worker.py", line 48, in assignment_change
+    if self.zk.exists(workerNode.path.__str__()):
+  File "/usr/local/lib/python2.7/dist-packages/kazoo/client.py", line 984, in exists
+    return self.exists_async(path, watch).get()
+  File "/usr/local/lib/python2.7/dist-packages/kazoo/handlers/utils.py", line 72, in get
+    raise self._exception
+ConnectionClosedError: Connection has been closed
+2016-05-03 16:19:21,712 Exception in worker queue thread
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/kazoo/handlers/threading.py", line 99, in _thread_worker
+    func()
+  File "/usr/local/lib/python2.7/dist-packages/kazoo/handlers/threading.py", line 196, in <lambda>
+    self.callback_queue.put(lambda: callback.func(*callback.args))
+  File "worker.py", line 31, in assignment_change
+    self.zk.get_children(self.znodePath, watch=self.assignment_change)
+  File "/usr/local/lib/python2.7/dist-packages/kazoo/client.py", line 1079, in get_children
+    return self.get_children_async(path, watch, include_data).get()
+  File "/usr/local/lib/python2.7/dist-packages/kazoo/handlers/utils.py", line 72, in get
+    raise self._exception
+ConnectionClosedError: Connection has been closed
+ubuntu@ubuntu:~/zk$
+
+
+#####################################################################################################################################
+# Client 1
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ python client.py
+2016-05-03 16:17:55,769 Connecting to 127.0.0.1:2181
+2016-05-03 16:17:55,774 Zookeeper connection established, state: CONNECTED
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/ec334a07-e6aa-4d80-8142-22cfd832b3d3')
+result: ('0', ZnodeStat(czxid=6188, mzxid=6291, ctime=1462292275777, mtime=1462292286174, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6188))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/b8dccf69-414f-4694-bd34-1059468b7e96')
+result: ('0', ZnodeStat(czxid=6236, mzxid=6392, ctime=1462292280871, mtime=1462292298227, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6236))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/2d97ae08-b7c7-45c9-bed1-a51c447cf7e5')
+result: ('0', ZnodeStat(czxid=6244, mzxid=6396, ctime=1462292281878, mtime=1462292301238, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6244))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/b0a67415-8e3f-45e3-8d31-c8cc089cc26a')
+result: ('0', ZnodeStat(czxid=6252, mzxid=6400, ctime=1462292282884, mtime=1462292304248, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6252))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/56d4d85e-da81-4aed-8a48-e9553b2aed92')
+result: ('0', ZnodeStat(czxid=6196, mzxid=6404, ctime=1462292276789, mtime=1462292307261, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6196))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/e0ba0485-2779-45f6-b913-043a072f3651')
+result: ('0', ZnodeStat(czxid=6287, mzxid=6412, ctime=1462292285940, mtime=1462292313292, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6287))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/84c7356f-fca7-471d-9e66-2a3a764e7789')
+result: ('0', ZnodeStat(czxid=6360, mzxid=6416, ctime=1462292291990, mtime=1462292316303, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6360))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/4b65e187-fced-4e14-8de0-7990a3df1fad')
+result: ('0', ZnodeStat(czxid=6224, mzxid=6424, ctime=1462292279862, mtime=1462292322347, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6224))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/38e79c95-14ac-435e-b5a8-9bc006ba00a1')
+result: ('0', ZnodeStat(czxid=6384, mzxid=6428, ctime=1462292295049, mtime=1462292325361, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6384))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/569fddf0-4bd9-4e23-aee3-e427d2314b2d')
+result: ('0', ZnodeStat(czxid=6216, mzxid=6440, ctime=1462292278833, mtime=1462292334398, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6216))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/aa322bd8-25d0-4d9e-a4d6-ec2ca4617746')
+result: ('0', ZnodeStat(czxid=6352, mzxid=6444, ctime=1462292290982, mtime=1462292337409, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6352))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/e2dd9fb5-8920-4f82-b169-ffcfcd603ca9')
+result: ('0', ZnodeStat(czxid=6344, mzxid=6452, ctime=1462292289974, mtime=1462292343636, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6344))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/8378494b-e499-4d1c-b9dc-7c10dfa8038c')
+result: ('0', ZnodeStat(czxid=6276, mzxid=6460, ctime=1462292284934, mtime=1462292349661, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6276))
+^C2016-05-03 16:19:12,292 Closing connection to 127.0.0.1:2181
+2016-05-03 16:19:12,293 Zookeeper session lost, state: CLOSED
+ubuntu@ubuntu:~/zk$
+
+
+#####################################################################################################################################
+# Client 2
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ python client.py
+2016-05-03 16:17:54,106 Connecting to 127.0.0.1:2181
+2016-05-03 16:17:54,112 Zookeeper connection established, state: CONNECTED
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/2ee74797-aa51-45b6-9277-c2630f5dcaf9')
+result: ('0', ZnodeStat(czxid=6179, mzxid=6200, ctime=1462292274115, mtime=1462292277131, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6179))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/6ffb7f69-6b15-42be-9e24-18e391906cac')
+result: ('0', ZnodeStat(czxid=6192, mzxid=6228, ctime=1462292276139, mtime=1462292280145, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6192))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/4f5e8ca0-406e-4a31-b036-56ff08cc7146')
+result: ('0', ZnodeStat(czxid=6183, mzxid=6256, ctime=1462292275129, mtime=1462292283158, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6183))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/38b619f0-ef39-4d67-b609-313e6e2187b2')
+result: ('0', ZnodeStat(czxid=6220, mzxid=6334, ctime=1462292279161, mtime=1462292289188, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6220))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/8d57784e-7968-4961-91a2-3b15f943570f')
+result: ('0', ZnodeStat(czxid=6204, mzxid=6364, ctime=1462292277144, mtime=1462292292202, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6204))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/d36339fb-0d2f-44e7-af83-a9a4b3b9ba87')
+result: ('0', ZnodeStat(czxid=6212, mzxid=6388, ctime=1462292278150, mtime=1462292295214, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6212))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/2e10712f-f2bb-4ec2-9eb7-fe85d2875628')
+result: ('0', ZnodeStat(czxid=6260, mzxid=6408, ctime=1462292283185, mtime=1462292310279, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6260))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/5b1c1c46-c6d6-4da7-8d77-9fc8befef30f')
+result: ('0', ZnodeStat(czxid=6232, mzxid=6420, ctime=1462292280167, mtime=1462292319317, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6232))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/ed12f0af-2c35-4b9f-800c-5b8ca007dc8d')
+result: ('0', ZnodeStat(czxid=6376, mzxid=6432, ctime=1462292293246, mtime=1462292328372, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6376))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/bc56ce96-3878-41ee-b02f-acd4fcb4ffde')
+result: ('0', ZnodeStat(czxid=6308, mzxid=6436, ctime=1462292287211, mtime=1462292331385, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6308))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/78ac8b43-db17-4d46-85be-151a4a534bbc')
+result: ('0', ZnodeStat(czxid=6248, mzxid=6448, ctime=1462292282180, mtime=1462292340422, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6248))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/6cbdeed9-bc96-4094-b43c-80b8699422d7')
+result: ('0', ZnodeStat(czxid=6240, mzxid=6456, ctime=1462292281173, mtime=1462292346648, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6240))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/dc50a57e-9ba8-4a29-9ca4-2b313d2788d9')
+result: ('0', ZnodeStat(czxid=6322, mzxid=6467, ctime=1462292288217, mtime=1462292355685, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=6322))
+^C2016-05-03 16:19:16,976 Closing connection to 127.0.0.1:2181
+2016-05-03 16:19:16,977 Zookeeper session lost, state: CLOSED
+ubuntu@ubuntu:~/zk$

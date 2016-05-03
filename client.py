@@ -37,7 +37,7 @@ class Client:
         self.zk.delete(dataNode.path)
     
     def submit_task_loop(self):
-        max_iterations = 20
+        max_iterations = 10
         current_iteration = 0
         while (current_iteration < max_iterations):
             current_iteration += 1

@@ -52,7 +52,7 @@ class Worker:
 
 if __name__ == '__main__':
     zk = utils.init()
-    for i in range(5):
+    for i in range(3):
         worker = Worker(zk)
     while True:
         time.sleep(1)

@@ -1,0 +1,240 @@
+#####################################################################################################################################
+# zk-shell localhost
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ zk-shell localhost
+Welcome to zk-shell (1.1.1)
+(CLOSED) />
+(CONNECTED) /> tree
+.
+├── data
+├── election
+│   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0_0000000000
+├── tasks
+├── workers
+│   ├── 90d1c42b-1127-4b95-9da9-8d678bc588fb
+│   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
+├── master
+│   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0
+├── zookeeper
+│   ├── quota
+(CONNECTED) />
+Exit? (y|n) n
+(CONNECTED) /> tree
+.
+├── data
+│   ├── 1139a654-8ed3-4b49-851a-149273c3b41a
+│   ├── 1fdb9416-d7a9-4511-85ec-46ec9a28accc
+│   ├── 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
+├── election
+│   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0_0000000000
+├── tasks
+│   ├── 1139a654-8ed3-4b49-851a-149273c3b41a
+│   ├── 1fdb9416-d7a9-4511-85ec-46ec9a28accc
+│   ├── 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
+├── workers
+│   ├── 90d1c42b-1127-4b95-9da9-8d678bc588fb
+│   │   ├── 1139a654-8ed3-4b49-851a-149273c3b41a
+│   │   ├── 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
+│   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
+│   │   ├── 1fdb9416-d7a9-4511-85ec-46ec9a28accc
+├── master
+│   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0
+├── zookeeper
+│   ├── quota
+(CONNECTED) />
+Exit? (y|n) y
+ubuntu@ubuntu:~/zk$ kill 11950
+ubuntu@ubuntu:~/zk$ zk-shell localhost
+Welcome to zk-shell (1.1.1)
+(CLOSED) />
+(CONNECTED) /> tree
+.
+├── data
+│   ├── 913f1472-38aa-42d4-9f80-ac71202a7d45
+│   ├── 27240f91-21cc-4626-9025-0bfa43a1e22b
+│   ├── d5a38cb5-3df4-4ea0-8de5-91878f2beb36
+│   ├── 4088d8e7-2b6c-41b4-8981-da3088e2efad
+│   ├── 89d6d43c-9e14-4c8c-a429-1974c855ea0e
+│   ├── 1e13548f-0370-4d9d-9d1e-62bc7e00bdb2
+│   ├── 70cf6ff9-9646-4c96-964a-d46d32e59672
+│   ├── 12c54653-5d66-4abc-9ebc-e5ed5518644c
+│   ├── 76e21f87-4628-45ec-bacc-9dd932ef9b6f
+│   ├── 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
+│   ├── f099c4d2-a48f-4bca-b1bc-e18c91181c28
+│   ├── 8e4ee637-822b-41bd-8a0b-0be9d035df78
+├── election
+│   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0_0000000000
+├── tasks
+│   ├── 913f1472-38aa-42d4-9f80-ac71202a7d45
+│   ├── 27240f91-21cc-4626-9025-0bfa43a1e22b
+│   ├── d5a38cb5-3df4-4ea0-8de5-91878f2beb36
+│   ├── 4088d8e7-2b6c-41b4-8981-da3088e2efad
+│   ├── 89d6d43c-9e14-4c8c-a429-1974c855ea0e
+│   ├── 1e13548f-0370-4d9d-9d1e-62bc7e00bdb2
+│   ├── 70cf6ff9-9646-4c96-964a-d46d32e59672
+│   ├── 12c54653-5d66-4abc-9ebc-e5ed5518644c
+│   ├── 76e21f87-4628-45ec-bacc-9dd932ef9b6f
+│   ├── 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
+│   ├── f099c4d2-a48f-4bca-b1bc-e18c91181c28
+│   ├── 8e4ee637-822b-41bd-8a0b-0be9d035df78
+├── workers
+│   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
+│   │   ├── 913f1472-38aa-42d4-9f80-ac71202a7d45
+│   │   ├── 27240f91-21cc-4626-9025-0bfa43a1e22b
+│   │   ├── d5a38cb5-3df4-4ea0-8de5-91878f2beb36
+│   │   ├── 4088d8e7-2b6c-41b4-8981-da3088e2efad
+│   │   ├── 89d6d43c-9e14-4c8c-a429-1974c855ea0e
+│   │   ├── 70cf6ff9-9646-4c96-964a-d46d32e59672
+│   │   ├── 1e13548f-0370-4d9d-9d1e-62bc7e00bdb2
+│   │   ├── 12c54653-5d66-4abc-9ebc-e5ed5518644c
+│   │   ├── 76e21f87-4628-45ec-bacc-9dd932ef9b6f
+│   │   ├── 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
+│   │   ├── f099c4d2-a48f-4bca-b1bc-e18c91181c28
+│   │   ├── 8e4ee637-822b-41bd-8a0b-0be9d035df78
+├── master
+│   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0
+├── zookeeper
+│   ├── quota
+(CONNECTED) /> tree
+.
+├── data
+├── election
+│   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0_0000000000
+├── tasks
+├── workers
+│   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
+├── master
+│   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0
+├── zookeeper
+│   ├── quota
+(CONNECTED) />
+
+
+#####################################################################################################################################
+# Master
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ python master.py
+2016-05-03 15:47:29,944 Connecting to 127.0.0.1:2181
+2016-05-03 15:47:29,981 Zookeeper connection established, state: CONNECTED
+Creaded node real path: /election/35a0262c-a98d-4b80-b7aa-d0f94e3372c0_0000000000
+Watch node: None
+Callback function: <bound method Master.start_election of <__main__.Master instance at 0x7f67a9113e60>>
+Assigned task 'd94e41cd-5dfd-42f0-9f28-8209576c1c76' to worker '90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+Assigned task '1fdb9416-d7a9-4511-85ec-46ec9a28accc' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '8ddd1f54-c9ab-44b5-803d-1e67c5ea78be' to worker '90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+Assigned task '1139a654-8ed3-4b49-851a-149273c3b41a' to worker '90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+Assigned task '89d6d43c-9e14-4c8c-a429-1974c855ea0e' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '1e13548f-0370-4d9d-9d1e-62bc7e00bdb2' to worker '90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+Assigned task 'd5a38cb5-3df4-4ea0-8de5-91878f2beb36' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '70cf6ff9-9646-4c96-964a-d46d32e59672' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '913f1472-38aa-42d4-9f80-ac71202a7d45' to worker '90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+Assigned task '76e21f87-4628-45ec-bacc-9dd932ef9b6f' to worker '90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+Reset to unassigned, task: 913f1472-38aa-42d4-9f80-ac71202a7d45
+Reset to unassigned, task: 1e13548f-0370-4d9d-9d1e-62bc7e00bdb2
+Reset to unassigned, task: 76e21f87-4628-45ec-bacc-9dd932ef9b6f
+Reset to unassigned, task: 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
+Assigned task '913f1472-38aa-42d4-9f80-ac71202a7d45' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '1e13548f-0370-4d9d-9d1e-62bc7e00bdb2' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '76e21f87-4628-45ec-bacc-9dd932ef9b6f' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '8ddd1f54-c9ab-44b5-803d-1e67c5ea78be' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '27240f91-21cc-4626-9025-0bfa43a1e22b' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '4088d8e7-2b6c-41b4-8981-da3088e2efad' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '8e4ee637-822b-41bd-8a0b-0be9d035df78' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task 'f099c4d2-a48f-4bca-b1bc-e18c91181c28' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '12c54653-5d66-4abc-9ebc-e5ed5518644c' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task 'e02513d5-e90a-478c-bed0-5f0296dbd1d0' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '22780346-d402-4ca6-8416-b65944c26006' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task 'b6786f7b-d905-43e7-977a-881d7a941077' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task '7be3b698-8da3-4b54-bc35-d84a00c603d8' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Assigned task 'a94c1404-8d4a-41f8-b3e6-bcea4ee96629' to worker '2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+
+
+#####################################################################################################################################
+# Worker
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ python worker.py
+2016-05-03 15:47:38,533 Connecting to 127.0.0.1:2181
+2016-05-03 15:47:38,538 Zookeeper connection established, state: CONNECTED
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/90d1c42b-1127-4b95-9da9-8d678bc588fb')
+Found child 'd94e41cd-5dfd-42f0-9f28-8209576c1c76' in worker '/workers/90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2')
+Found child '1fdb9416-d7a9-4511-85ec-46ec9a28accc' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/90d1c42b-1127-4b95-9da9-8d678bc588fb')
+Found child '1139a654-8ed3-4b49-851a-149273c3b41a' in worker '/workers/90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+Found child '8ddd1f54-c9ab-44b5-803d-1e67c5ea78be' in worker '/workers/90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+2016-05-03 15:48:28,489 Connecting to 127.0.0.1:2181
+2016-05-03 15:48:28,493 Zookeeper connection established, state: CONNECTED
+Deleting worker child: 90d1c42b-1127-4b95-9da9-8d678bc588fb
+Found child '1e13548f-0370-4d9d-9d1e-62bc7e00bdb2' in worker '/workers/90d1c42b-1127-4b95-9da9-8d678bc588fb'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2')
+Found child '913f1472-38aa-42d4-9f80-ac71202a7d45' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '27240f91-21cc-4626-9025-0bfa43a1e22b' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child 'd5a38cb5-3df4-4ea0-8de5-91878f2beb36' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '4088d8e7-2b6c-41b4-8981-da3088e2efad' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '89d6d43c-9e14-4c8c-a429-1974c855ea0e' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '70cf6ff9-9646-4c96-964a-d46d32e59672' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '1e13548f-0370-4d9d-9d1e-62bc7e00bdb2' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '12c54653-5d66-4abc-9ebc-e5ed5518644c' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '76e21f87-4628-45ec-bacc-9dd932ef9b6f' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '8ddd1f54-c9ab-44b5-803d-1e67c5ea78be' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child 'f099c4d2-a48f-4bca-b1bc-e18c91181c28' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '8e4ee637-822b-41bd-8a0b-0be9d035df78' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2')
+Found child 'e02513d5-e90a-478c-bed0-5f0296dbd1d0' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '22780346-d402-4ca6-8416-b65944c26006' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child '7be3b698-8da3-4b54-bc35-d84a00c603d8' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child 'b6786f7b-d905-43e7-977a-881d7a941077' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+Found child 'a94c1404-8d4a-41f8-b3e6-bcea4ee96629' in worker '/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2'.
+WatchedEvent(type='CHILD', state='CONNECTED', path=u'/workers/2101a26d-92f4-4f67-a1c1-9794c3266cd2')
+
+
+#####################################################################################################################################
+# Client
+#####################################################################################################################################
+
+ubuntu@ubuntu:~/zk$ python client.py
+2016-05-03 15:48:18,517 Connecting to 127.0.0.1:2181
+2016-05-03 15:48:18,522 Zookeeper connection established, state: CONNECTED
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/d94e41cd-5dfd-42f0-9f28-8209576c1c76')
+result: ('0', ZnodeStat(czxid=4560, mzxid=4572, ctime=1462290498526, mtime=1462290501543, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4560))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/1fdb9416-d7a9-4511-85ec-46ec9a28accc')
+result: ('0', ZnodeStat(czxid=4564, mzxid=4588, ctime=1462290499536, mtime=1462290504562, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4564))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/1139a654-8ed3-4b49-851a-149273c3b41a')
+result: ('0', ZnodeStat(czxid=4575, mzxid=4604, ctime=1462290501548, mtime=1462290507579, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4575))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/913f1472-38aa-42d4-9f80-ac71202a7d45')
+result: ('0', ZnodeStat(czxid=4600, mzxid=4664, ctime=1462290506611, mtime=1462290516603, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4600))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/27240f91-21cc-4626-9025-0bfa43a1e22b')
+result: ('0', ZnodeStat(czxid=4630, mzxid=4676, ctime=1462290508622, mtime=1462290519615, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4630))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/d5a38cb5-3df4-4ea0-8de5-91878f2beb36')
+result: ('0', ZnodeStat(czxid=4592, mzxid=4680, ctime=1462290504599, mtime=1462290522629, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4592))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/4088d8e7-2b6c-41b4-8981-da3088e2efad')
+result: ('0', ZnodeStat(czxid=4634, mzxid=4684, ctime=1462290509628, mtime=1462290525640, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4634))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/89d6d43c-9e14-4c8c-a429-1974c855ea0e')
+result: ('0', ZnodeStat(czxid=4580, mzxid=4688, ctime=1462290502559, mtime=1462290528651, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4580))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/70cf6ff9-9646-4c96-964a-d46d32e59672')
+result: ('0', ZnodeStat(czxid=4596, mzxid=4692, ctime=1462290505605, mtime=1462290531662, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4596))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/1e13548f-0370-4d9d-9d1e-62bc7e00bdb2')
+result: ('0', ZnodeStat(czxid=4584, mzxid=4696, ctime=1462290503570, mtime=1462290534674, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4584))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/12c54653-5d66-4abc-9ebc-e5ed5518644c')
+result: ('0', ZnodeStat(czxid=4648, mzxid=4700, ctime=1462290512647, mtime=1462290537685, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4648))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/76e21f87-4628-45ec-bacc-9dd932ef9b6f')
+result: ('0', ZnodeStat(czxid=4608, mzxid=4704, ctime=1462290507617, mtime=1462290540695, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4608))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/8ddd1f54-c9ab-44b5-803d-1e67c5ea78be')
+result: ('0', ZnodeStat(czxid=4568, mzxid=4708, ctime=1462290500543, mtime=1462290543706, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4568))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/f099c4d2-a48f-4bca-b1bc-e18c91181c28')
+result: ('0', ZnodeStat(czxid=4642, mzxid=4712, ctime=1462290511640, mtime=1462290546717, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4642))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/8e4ee637-822b-41bd-8a0b-0be9d035df78')
+result: ('0', ZnodeStat(czxid=4638, mzxid=4716, ctime=1462290510634, mtime=1462290549727, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4638))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/e02513d5-e90a-478c-bed0-5f0296dbd1d0')
+result: ('0', ZnodeStat(czxid=4652, mzxid=4720, ctime=1462290513654, mtime=1462290552748, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4652))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/22780346-d402-4ca6-8416-b65944c26006')
+result: ('0', ZnodeStat(czxid=4656, mzxid=4724, ctime=1462290514662, mtime=1462290555759, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4656))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/7be3b698-8da3-4b54-bc35-d84a00c603d8')
+result: ('0', ZnodeStat(czxid=4668, mzxid=4728, ctime=1462290516675, mtime=1462290558769, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4668))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/b6786f7b-d905-43e7-977a-881d7a941077')
+result: ('0', ZnodeStat(czxid=4660, mzxid=4732, ctime=1462290515669, mtime=1462290561780, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4660))
+WatchedEvent(type='CHANGED', state='CONNECTED', path=u'/data/a94c1404-8d4a-41f8-b3e6-bcea4ee96629')
+result: ('0', ZnodeStat(czxid=4672, mzxid=4736, ctime=1462290517681, mtime=1462290564791, version=1, cversion=0, aversion=0, ephemeralOwner=0, dataLength=1, numChildren=0, pzxid=4672))

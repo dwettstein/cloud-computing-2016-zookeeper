@@ -101,11 +101,11 @@ In this section, you are required to implement a leader election protocol.
 ZooKeeper allows us to implement such an abstraction by exploiting the mechanisms of [watch](https://zookeeper.apache.org/doc/r3.1.2/zookeeperProgrammers.html#sc_zkDataMode_watches) and [sequential znode](https://zookeeper.apache.org/doc/r3.1.2/zookeeperProgrammers.html#Sequence+Nodes+--+Unique+Naming).
 A recipe in pseudo-code using these building blocks is available [online](http://zookeeper.apache.org/doc/trunk/recipes.html#sc_leaderElection).
 
-**[EXERCISE]** Using the Kazoo library to issue CRUD operations and set watchers, complete the leader election class in *election.py*.
+~~**[EXERCISE]** Using the Kazoo library to issue CRUD operations and set watchers, complete the leader election class in *election.py*.~~ Done.
 
-**[EXERCISE]** Run several instances of *election.py*: at the end of the execution, only one leader is supposed to be elected. Hint: they should  compete on the */master* znode.
+~~**[EXERCISE]** Run several instances of *election.py*: at the end of the execution, only one leader is supposed to be elected. Hint: they should  compete on the */master* znode.~~ Done.
 
-**[EXERCISE]** Send SIGTERM to some of the running *election.py* instances. Ensure your code is correct, i.e., *(i)* at most one leader is elected, and *(ii)* eventually, a running process is elected. Hint: check an example on signal handling in Python [here](https://docs.python.org/2/library/signal.html#example).
+~~**[EXERCISE]** Send SIGTERM to some of the running *election.py* instances. Ensure your code is correct, i.e., *(i)* at most one leader is elected, and *(ii)* eventually, a running process is elected. Hint: check an example on signal handling in Python [here](https://docs.python.org/2/library/signal.html#example).~~ Done.
 
 ##3 - Master/Worker Architecture
 
@@ -182,9 +182,9 @@ Your implementation should work correctly in all following scenarios:
 3. **(2/2/1)** workers compete in executing the tasks submitted by the clients; and 
 4. **(2/2/2)** the back-up resumes the job of the master upon a failure.
 
-**[EXERCISE]** Provide evidences that your implementation works correctly in the 4 mentioned scenarios. You can provide logs and detailed explanations, use tables, etc. Discuss with the both assistants to decide upon your plan of action.
+~~**[EXERCISE]** Provide evidences that your implementation works correctly in the 4 mentioned scenarios. You can provide logs and detailed explanations, use tables, etc. Discuss with the both assistants to decide upon your plan of action.~~ Done.
 
-**[EXERCISE]** Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle) instead of crashing.
+~~**[EXERCISE]** Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle) instead of crashing.~~ Done.
 
 
 ##3.3 ZooKeeper in Cluster Mode
