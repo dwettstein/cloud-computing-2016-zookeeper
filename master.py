@@ -83,26 +83,26 @@ class Master:
                 least_assignments = sys.maxint
                 for worker in workers:
                     assignments = self.zk.get_children(WORKERS_PATH + "/" + worker.__str__())
-                    print("**********")
-                    print("worker: " + worker.__str__())
-                    print("number of assignments: " + assignments.__str__())
-                    print("least assignments: " + least_assignments.__str__())
-                    print("**********")
+                    #print("**********")
+                    #print("worker: " + worker.__str__())
+                    #print("number of assignments: " + len(assignments).__str__())
+                    #print("least assignments: " + least_assignments.__str__())
+                    #print("**********")
                     if (len(assignments) < least_assignments):
                         least_assignments = len(assignments)
                         free_worker = worker
                 if free_worker != None: 
-                    self.zk.create(WORKERS_PATH + "/" + worker.__str__() + "/" + unassignedTask.__str__())
-                    self.zk.set(TASKS_PATH + "/" + unassignedTask, worker.__str__()) # set value to assigned worker guid
+                    self.zk.create(WORKERS_PATH + "/" + free_worker.__str__() + "/" + unassignedTask.__str__())
+                    self.zk.set(TASKS_PATH + "/" + unassignedTask, free_worker.__str__()) # set value to assigned worker guid
                     print("**********")
-                    print("Assigned task '%s' to worker '%s'." % (unassignedTask.__str__(), worker.__str__()))
+                    print("Assigned task '%s' to worker '%s'." % (unassignedTask.__str__(), free_worker.__str__()))
                     print("**********")
 
     def reset_to_unassigned(self, deleted_worker):
         self.zk.get_children(WORKERS_PATH, watch=self.reset_to_unassigned)
         if self.election.is_leading:
             print("**********")
-            print("Deleted worker: " + deleted_worker)
+            print("Deleted worker: " + deleted_worker.__str__())
             print("**********")
             all_tasks = self.zk.get_children(TASKS_PATH)
             for task in all_tasks:
