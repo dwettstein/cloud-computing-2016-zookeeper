@@ -1,5 +1,5 @@
 #!/usr/bin/env python2.7
-import time, socket, os, uuid, sys, kazoo, logging, signal, inspect
+import time, socket, os, uuid, sys, kazoo, logging, signal, inspect, utils
 from kazoo.client import KazooClient
 from kazoo.client import KazooState
 from kazoo.exceptions import KazooException
@@ -9,7 +9,7 @@ ELECTION_PATH="/election"
 class Election:
 
     def __init__(self, zk, guid, func, args):
-        self.election_path = ELECTION_PATH + "/" + guid.__str__
+        self.election_path = ELECTION_PATH + "/" + str(guid) + "_"
         self.zk = zk
         self.is_leader = False
         if not (inspect.isfunction(func)) and not(inspect.ismethod(func)):
@@ -17,9 +17,9 @@ class Election:
             raise SystemError
         self.real_path = self.zk.create(self.election_path, ephemeral=True, sequence=True)
         print("**********")
-        print("Creaded node real path: " + real_path)
+        print("Creaded node real path: " + self.real_path)
         print("Watch node: " + args[0])
-        print("Callback function: " + func.__str__)
+        print("Callback function: " + str(func))
         print("**********")
         self.zk.get(args[0], watch=func)
         
