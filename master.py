@@ -68,14 +68,14 @@ class Master:
             unassignedTasks = []
             for task in tasks:
                 taskTuple = self.zk.get(TASKS_PATH + "/" + task.__str__())
-                print("**********")
-                print("taskTuple: " + taskTuple.__str__())
-                print("**********")
+                #print("**********")
+                #print("taskTuple: " + taskTuple.__str__())
+                #print("**********")
                 if taskTuple[0] == '0':
                     unassignedTasks.append(task)
-            print("**********")
-            print("Found %i unassigned tasks." % len(unassignedTasks))
-            print("**********")  
+            #print("**********")
+            #print("Found %i unassigned tasks." % len(unassignedTasks))
+            #print("**********")  
             # Assign open tasks to workers. Usually there should be only one unassigned task at a time.
             for unassignedTask in unassignedTasks:
                 workers = self.zk.get_children(WORKERS_PATH)
@@ -83,6 +83,11 @@ class Master:
                 least_assignments = sys.maxint
                 for worker in workers:
                     assignments = self.zk.get_children(WORKERS_PATH + "/" + worker.__str__())
+                    print("**********")
+                    print("worker: " + worker.__str__())
+                    print("number of assignments: " + assignments.__str__())
+                    print("least assignments: " + least_assignments.__str__())
+                    print("**********")
                     if (len(assignments) < least_assignments):
                         least_assignments = len(assignments)
                         free_worker = worker
