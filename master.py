@@ -105,10 +105,10 @@ class Master:
             all_tasks = self.zk.get_children(TASKS_PATH)
             for task in all_tasks:
                 task_node = self.zk.get(TASKS_PATH + "/" + task.__str__())
-                print("task_node: " + task_node.__str__())
+                #print("task_node: " + task_node.__str__())
                 if not (task_node[0].__str__() in all_workers):
-                    print("Reset to unassigned, task: " + task_node[0].__str__())
-                    self.zk.set(TASKS_PATH + "/" + task_node[0].__str__(), '0')
+                    print("Reset to unassigned, task: " + task.__str__())
+                    self.zk.set(TASKS_PATH + "/" + task.__str__(), '0')
             self.assign(None)
 
 if __name__ == '__main__':
