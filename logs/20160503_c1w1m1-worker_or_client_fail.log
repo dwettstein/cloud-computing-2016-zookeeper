@@ -1,0 +1,2 @@
+The situation c1w1m1 doesn't make sense. If a client fail, there will be no more tasks created only, and a new client could be started straight forward.
+If a single worker fails, there will be no more tasks executed and all tasks remain unassigned.

@@ -45,8 +45,9 @@ class Worker:
             #print("dataTuple: " + dataTuple.__str__())
             #print("**********")
             utils.task(dataTuple)
-            self.zk.set(dataPath, '0') # Set task result into data node.
-            self.zk.delete(workerNode.path.__str__() + "/" + child)
+            if self.zk.exists(workerNode.path.__str__()):
+                self.zk.set(dataPath, '0') # Set task result into data node.
+                self.zk.delete(workerNode.path.__str__() + "/" + child)
 
 
 if __name__ == '__main__':
