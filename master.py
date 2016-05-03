@@ -24,28 +24,34 @@ class Master:
         print("**********")
         print("Deleted election child: " + str(election_child))
         print("**********")
-        splits = str(election_child.path).split(str='_')
+        splits = str(election_child.path).split("_")
         child_guid = splits[0].replace(ELECTION_PATH + "/", "")
         child_number = splits[1]
         self.zk.delete(MASTER_PATH + "/" + child_guid)
         election_children = self.zk.get_children(ELECTION_PATH)
         election_nodes = []
-        #new_master = None
-        #least_number = sys.maxint
+        
+        # deleted node
+        node_to_delete = None
+        for master in utils.master_list:
+            if str(master.uuid) == child_guid:
+                node_to_delete = master
+        node_to_delete.election.is_leader = False
+        utils.master_list.__delitem__(note_to_delete)       
+        
         for child in election_children:
-            child_splits = str(child).split(str='_')
+            child_splits = str(child).split("_")
             child_tuple = (child_splits[0], child_splits[1])
             election_nodes.append(child_tuple)
         sorted_list = sorted(election_nodes, key=lambda x: x[1])
         new_master = sorted_list[0]
+        
         # Check if first item of cutted list is equal to the new master.
-        cutted_sorted_list = [elem for elem in sorted_list if elem[1] < child_number]
-        if len(cutted_sorted_list) > 0
-            next_election_child = cutted_sorted_list[len(cutted_sorted_list) - 1]
-            self.zk.get(ELECTION_PATH + "/" + next_election_child[0] + "_" + next_election_child[1], watch=self.start_election)
-            # if (child_splits[1] < least_number):
-                # least_number = child_splits[1]
-                # new_master = child_splits[0]
+        # cutted_sorted_list = [elem for elem in sorted_list if elem[1] < child_number]
+        # if len(cutted_sorted_list) > 0:
+        #     next_election_child = cutted_sorted_list[len(cutted_sorted_list) - 1]
+        #     self.zk.get(ELECTION_PATH + "/" + next_election_child[0] + "_" + next_election_child[1], watch=self.start_election)
+        
         print("New elected master: " + new_master[0])
         for master in utils.master_list:
             if str(master.uuid) == new_master[0]:
