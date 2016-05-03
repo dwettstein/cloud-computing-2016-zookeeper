@@ -10,14 +10,19 @@ from utils import WORKERS_PATH
 class Master:
 
     #initialize the master
-    def __init__(self, zk):
-        self.master = True # TODO: Set back to False and execute election.
+    def __init__(self, zk, prev_election):
+        self.master = prev_election == None ? True : False
         self.zk = zk
         self.uuid = uuid.uuid4()
+        self.election = Election(self.zk, self.uuid, self.start_election, prev_election)
+        
         self.znodePath = MASTER_PATH + "/" + self.uuid.__str__()
         self.zk.create(self.znodePath, ephemeral=False)
         # Watch for children aka task assignments.
         self.zk.get_children(TASKS_PATH, watch=self.assign)
+    
+    def start_election(self, election_child):
+        print("************* Election Child: " + election_child.__str__)
     
     #assign tasks                    
     def assign(self, tasks):
@@ -57,6 +62,10 @@ class Master:
 
 if __name__ == '__main__':
     zk = utils.init()
-    master = Master(zk)
+    
+    prev_election = None
+    for i in 1..5:
+        master = Master(zk, prev_election)
+        prev_election = master.election
     while True:
         time.sleep(1)
