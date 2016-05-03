@@ -9,7 +9,7 @@ ELECTION_PATH="/election"
 class Election:
 
     def __init__(self, zk, guid, func, args):
-        self.election_path = ELECTION_PATH + "/" + guid
+        self.election_path = ELECTION_PATH + "/" + guid.__str__
         self.zk = zk
         self.is_leader = False
         if not (inspect.isfunction(func)) and not(inspect.ismethod(func)):

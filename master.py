@@ -11,7 +11,7 @@ class Master:
 
     #initialize the master
     def __init__(self, zk, prev_election):
-        self.master = prev_election == None ? True : False
+        self.master = True if prev_election == None else False
         self.zk = zk
         self.uuid = uuid.uuid4()
         self.election = Election(self.zk, self.uuid, self.start_election, prev_election)
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     zk = utils.init()
     
     prev_election = None
-    for i in 1..5:
+    for i in range(5):
         master = Master(zk, prev_election)
         prev_election = master.election
     while True:
