@@ -14,6 +14,9 @@ Welcome to zk-shell (1.1.1)
 ├── workers
 │   ├── 90d1c42b-1127-4b95-9da9-8d678bc588fb
 │   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
+├── workers_eph
+│   ├── 90d1c42b-1127-4b95-9da9-8d678bc588fb
+│   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
 ├── master
 │   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0
 ├── zookeeper
@@ -38,6 +41,9 @@ Exit? (y|n) n
 │   │   ├── 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
 │   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
 │   │   ├── 1fdb9416-d7a9-4511-85ec-46ec9a28accc
+├── workers_eph
+│   ├── 90d1c42b-1127-4b95-9da9-8d678bc588fb
+│   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
 ├── master
 │   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0
 ├── zookeeper
@@ -92,6 +98,8 @@ Welcome to zk-shell (1.1.1)
 │   │   ├── 8ddd1f54-c9ab-44b5-803d-1e67c5ea78be
 │   │   ├── f099c4d2-a48f-4bca-b1bc-e18c91181c28
 │   │   ├── 8e4ee637-822b-41bd-8a0b-0be9d035df78
+├── workers_eph
+│   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
 ├── master
 │   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0
 ├── zookeeper
@@ -103,6 +111,8 @@ Welcome to zk-shell (1.1.1)
 │   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0_0000000000
 ├── tasks
 ├── workers
+│   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
+├── workers_eph
 │   ├── 2101a26d-92f4-4f67-a1c1-9794c3266cd2
 ├── master
 │   ├── 35a0262c-a98d-4b80-b7aa-d0f94e3372c0

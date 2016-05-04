@@ -15,6 +15,9 @@ Welcome to zk-shell (1.1.1)
 ├── workers
 │   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
 │   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
+├── workers_eph
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
 ├── master
 │   ├── 0b2cd4be-1a27-4668-961a-0f3583b5a710
 │   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
@@ -48,6 +51,9 @@ Welcome to zk-shell (1.1.1)
 │   │   ├── 6ffb7f69-6b15-42be-9e24-18e391906cac
 │   │   ├── 4f5e8ca0-406e-4a31-b036-56ff08cc7146
 │   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── workers_eph
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
 ├── master
 │   ├── 0b2cd4be-1a27-4668-961a-0f3583b5a710
 │   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
@@ -167,6 +173,9 @@ Welcome to zk-shell (1.1.1)
 │   │   ├── 8d11489a-752e-4577-ab27-ebfb6c5364cc
 │   │   ├── dc50a57e-9ba8-4a29-9ca4-2b313d2788d9
 │   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── workers_eph
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
 ├── master
 │   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
 ├── zookeeper
@@ -228,6 +237,9 @@ Welcome to zk-shell (1.1.1)
 │   │   ├── 8d11489a-752e-4577-ab27-ebfb6c5364cc
 │   │   ├── dc50a57e-9ba8-4a29-9ca4-2b313d2788d9
 │   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── workers_eph
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
 ├── master
 │   ├── 10cfdca4-d21a-49b8-b26d-2fbfc8163b2f
 ├── zookeeper

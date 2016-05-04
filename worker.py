@@ -5,6 +5,7 @@ from utils import MASTER_PATH
 from utils import TASKS_PATH
 from utils import DATA_PATH
 from utils import WORKERS_PATH
+from utils import WORKERSEPH_PATH
 
 
 class Worker:
@@ -13,7 +14,9 @@ class Worker:
         self.zk = zk
         self.uuid = uuid.uuid4()
         self.znodePath = WORKERS_PATH + "/" + self.uuid.__str__()
+		self.znodePath2 = WORKERSEPH_PATH + "/" + self.uuid.__str__()
         self.zk.create(self.znodePath, ephemeral=False)
+		self.zk.create(self.znodePath2, ephemeral=True)
         # Watch for children aka task assignments.
         self.zk.get_children(self.znodePath, watch=self.assignment_change)
     
@@ -22,7 +25,7 @@ class Worker:
             worker_children = zk.get_children(WORKERS_PATH)
             for child in worker_children:
                 print("Deleting worker child: " + str(child))
-                zk.delete(WORKERS_PATH + "/" + child, recursive=True)
+                zk.delete(WORKERSEPH_PATH + "/" + child)
                 return
         signal.signal(signal.SIGTERM, signal_handler)
     

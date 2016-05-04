@@ -5,6 +5,7 @@ from utils import MASTER_PATH
 from utils import TASKS_PATH
 from utils import DATA_PATH
 from utils import WORKERS_PATH
+from utils import WORKERSEPH_PATH
 from utils import ELECTION_PATH
 
 
@@ -20,7 +21,7 @@ class Master:
         # Watch for children aka task assignments.
         self.zk.get_children(TASKS_PATH, watch=self.assign)
         # Watch for worker deletion.
-        self.zk.get_children(WORKERS_PATH, watch=self.reset_to_unassigned)
+        self.zk.get_children(WORKERSEPH_PATH, watch=self.reset_to_unassigned)
     
     def start_election(self, election_child):
         print("**********")
@@ -99,9 +100,9 @@ class Master:
                     print("**********")
 
     def reset_to_unassigned(self, deleted_worker):
-        self.zk.get_children(WORKERS_PATH, watch=self.reset_to_unassigned)
+        self.zk.get_children(WORKERSEPH_PATH, watch=self.reset_to_unassigned)
         if self.election.is_leading:
-            all_workers = self.zk.get_children(WORKERS_PATH)
+            all_workers = self.zk.get_children(WORKERSEPH_PATH)
             all_tasks = self.zk.get_children(TASKS_PATH)
             for task in all_tasks:
                 task_node = self.zk.get(TASKS_PATH + "/" + task.__str__())
@@ -109,13 +110,14 @@ class Master:
                 if not (task_node[0].__str__() in all_workers):
                     print("Reset to unassigned, task: " + task.__str__())
                     self.zk.set(TASKS_PATH + "/" + task.__str__(), '0')
+					self.zk.delete(WORKERS_PATH + "/" + task_node[0].__str__(), recursive=True)
             self.assign(None)
 
 if __name__ == '__main__':
     zk = utils.init()
     
     prev_election = None
-    for i in range(5):
+    for i in range(2):
         master = Master(zk, prev_election)
         prev_election = master.election
         utils.master_list.append(master)
