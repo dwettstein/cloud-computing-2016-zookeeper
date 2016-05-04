@@ -110,7 +110,7 @@ class Master:
                 if not (task_node[0].__str__() in all_workers):
                     print("Reset to unassigned, task: " + task.__str__())
                     self.zk.set(TASKS_PATH + "/" + task.__str__(), '0')
-					self.zk.delete(WORKERS_PATH + "/" + task_node[0].__str__(), recursive=True)
+                    self.zk.delete(WORKERS_PATH + "/" + task_node[0].__str__(), recursive=True)
             self.assign(None)
 
 if __name__ == '__main__':

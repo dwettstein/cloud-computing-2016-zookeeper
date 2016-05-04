@@ -35,7 +35,7 @@ def init():
         zk.create(TASKS_PATH, ephemeral=False)
         zk.create(DATA_PATH, ephemeral=False)
         zk.create(WORKERS_PATH, ephemeral=False)
-		zk.create(WORKERSEPH_PATH, ephemeral=False)
+        zk.create(WORKERSEPH_PATH, ephemeral=False)
             
     def signal_handler(signal, frame):
         zk.stop()
