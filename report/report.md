@@ -58,7 +58,7 @@ TODO: Short description about ZooKeeper.
 
 ## Master/Worker architecture
 
-![Architecture](architecture.png?raw=true)
+![Architecture](../architecture.png?raw=true)
 
 TODO: Short description about architecture.
 
@@ -83,17 +83,17 @@ TODO: Describe the fault-tolerance scenarios.
 #### c1w2m1 - A worker fails
 
 TODO  
-Log: [c1w2m1 - A worker fails](logs/20160503_c1w2m1-worker_fail.log?raw=true)
+Log: [c1w2m1 - A worker fails](../logs/20160503_c1w2m1-worker_fail.log?raw=true)
 
 #### c2w2m1 - Workers compete in executing the tasks
 
 TODO  
-Log: [c2w2m1 - Workers compete in executing the tasks](logs/20160503_c2w2m1-workers_compete_in_executing_the_tasks.log?raw=true)
+Log: [c2w2m1 - Workers compete in executing the tasks](../logs/20160503_c2w2m1-workers_compete_in_executing_the_tasks.log?raw=true)
 
 #### c2w2m2 - A master fails
 
 TODO  
-Log: [c2w2m2 - A master fails](logs/20160503_c2w2m2-master_fail?raw=true)
+Log: [c2w2m2 - A master fails](../logs/20160503_c2w2m2-master_fail?raw=true)
 
 
 ## Cluster mode
