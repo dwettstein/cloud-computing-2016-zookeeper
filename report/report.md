@@ -8,11 +8,9 @@ Implementation of fault-tolerance techniques in a distributed setting based on m
 - Reto Schiegg
 - David Wettstein
 
-
 #### Git repository
 
 - https://github.com/dwettstein/zk
-
 
 #### Deployment
 
@@ -33,7 +31,6 @@ Implementation of fault-tolerance techniques in a distributed setting based on m
 - [Python 2.7](https://docs.python.org/2.7/)
 - [Kazoo library](http://kazoo.readthedocs.org/en/latest/)
 - [zk-shell](https://github.com/rgs1/zk_shell)
-
 
 #### Running ZooKeeper
 
@@ -64,20 +61,45 @@ Apache ZooKeeper is an open source project with the aim of providing distributed
 
 The idea of the master/worker architecture is to split the responsibilities of serving a client request. The master is responsible to assign these requests to an available worker. Then, this worker processes the actual request. Since there is only one master at once (i.e. the current leader), we need some backup instances of it in order to guarantee the reliability of the system.
 
-
 #### Master/Worker responsibilities
 
 TODO David: Show responsibilities and the different watchers (sketch).
 
 #### Leader election
 
-TODO: Explain our implemented leader election algorithm and how it works.
+The idea of the leader election is to find a new master/leader after the previous master has been discontinued or disconnected.
+In our system, we implemented the leader election according to this example: [ZooKeeper Election Example](http://zookeeper.apache.org/doc/trunk/recipes.html#sc_leaderElection).
+
+The main concept is that each possible master gets a number according to the node creation order. The lowest existing node is the current master/leader. When the current master dies, the next master with lowest number takes over the responsibilites.
+
+In order to avoid a herd effect when the current master dies (i.e. every backup asks if it is the new master at once), every backup master sets its watch to the preceeding (next lower) backup master only.
+
+In our implementation, we have a `/master` and `/election` node. When a master is initialized, it creates a child-node with the same GUID in both nodes. Additionally, the child-node in the `/election` node uses the _ephemeral_ and _sequence_ flags. When the election node of the current master disappears, the succeeding master will receive an event and takes over. If a backup master dies, we update the watchers such that every backup master always watches the next lower master.
 
 
 ## Load-balancing
 
-TODO David
+For assigning and executing the client requests/tasks, we use some kind of load-balancing algorithm such that the workload is evenly distributed over the workers. Whenever a worker gets a task, it creates a child-node under itself in order to remember what he has to do. When a new task arrives, the current master/leader assigns it to the worker with the least task assignments at this time. The result can be seen in the following _tree_ log of _zk-shell_:
 
+```
+.
+├── tasks
+│   ├── ec334a07-e6aa-4d80-8142-22cfd832b3d3
+│   ├── 8d57784e-7968-4961-91a2-3b15f943570f
+│   ├── 6ffb7f69-6b15-42be-9e24-18e391906cac
+│   ├── 4f5e8ca0-406e-4a31-b036-56ff08cc7146
+│   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── workers
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   │   ├── ec334a07-e6aa-4d80-8142-22cfd832b3d3
+│   │   ├── 8d57784e-7968-4961-91a2-3b15f943570f
+│   │   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
+│   │   ├── 6ffb7f69-6b15-42be-9e24-18e391906cac
+│   │   ├── 4f5e8ca0-406e-4a31-b036-56ff08cc7146
+│   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+```
 
 ## Fault-tolerance
 
