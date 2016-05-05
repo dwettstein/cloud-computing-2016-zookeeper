@@ -38,18 +38,19 @@ class Election:
     
     #perform a vote..    
     def ballot(self,children):
-        #TO COMPLETE
+        # Not needed, because election is based on watchers and node sequence.
         pass
 
 
 if __name__ == '__main__':
-    zkhost = "127.0.0.1:2181" #default ZK host
-    logging.basicConfig(format='%(asctime)s %(message)s',level=logging.DEBUG)
-    if len(sys.argv) == 2:
-        zkhost=sys.argv[2]
-        print("Using ZK at %s"%(zkhost))
-    zk = utils.init()
-    if zk.exists(ELECTION_PATH) == None:
-        zk.create(ELECTION_PATH, ephemeral=False)
-    while True:
-        time.sleep(1)
+    #zkhost = "127.0.0.1:2181" #default ZK host
+    #logging.basicConfig(format='%(asctime)s %(message)s',level=logging.DEBUG)
+    #if len(sys.argv) == 2:
+    #    zkhost=sys.argv[2]
+    #    print("Using ZK at %s"%(zkhost))
+    #zk = utils.init()
+    #if zk.exists(ELECTION_PATH) == None:
+    #    zk.create(ELECTION_PATH, ephemeral=False)
+    #while True:
+    #    time.sleep(1)
+    pass

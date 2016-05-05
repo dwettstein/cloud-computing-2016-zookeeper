@@ -34,6 +34,7 @@ def init():
         zk.create(MASTER_PATH, ephemeral=False)
         zk.create(TASKS_PATH, ephemeral=False)
         zk.create(DATA_PATH, ephemeral=False)
+        zk.create(ELECTION_PATH, ephemeral=False)
         zk.create(WORKERS_PATH, ephemeral=False)
         zk.create(WORKERSEPH_PATH, ephemeral=False)
             
