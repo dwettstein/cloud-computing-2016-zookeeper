@@ -101,7 +101,7 @@ TODO  Reto
 
 #### c2w2m2 - The backup resumes the job of the master upon a failure
 
-Log: [c2w2m2 - A master fails](../logs/20160503_c2w2m2-master_fail?raw=true)
+Log: [c2w2m2 - A master fails](../logs/20160503_c2w2m2-master_fail.log?raw=true)
 
 TODO  Reto
 

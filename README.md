@@ -194,9 +194,9 @@ Follow the official instructions [here](https://zookeeper.apache.org/doc/trunk/z
 
 Once the cluster of ZooKeeer servers is functional, you should test your master/worker system on this deployment.
 
-**[EXERCISE]** What differences do you observe ? 
+~~**[EXERCISE]** What differences do you observe ?~~ Done.
 
-**[EXERCISE]** Let one of the ZooKeeper server fail: how your system react in this scenario ? 
+~~**[EXERCISE]** Let one of the ZooKeeper server fail: how your system react in this scenario ?~~ Done.
 
 
 ## How to deliver your solutions
