@@ -55,14 +55,15 @@ ubuntu@ubuntu:~/zk$ kill {master.py_process_id | worker.py_process_id}
 
 ## Apache ZooKeeper
 
-TODO: Short description about ZooKeeper.
+Apache ZooKeeper is an open source project with the aim of providing distributed synchronization and configuration. It allows distributed processes to coordinate with each other through a shared hierarchical name space of data registers (znodes). These registers are kept in-memory, from which it follows that the size of the database, managed by ZooKeeper, is limited by memory. On the other hand, the main advantage is a very high throughput and low latency numbers. Thanks to this, it can also be used within large distributed systems.
 
 
 ## Master/Worker architecture
 
 ![Architecture](../architecture.png?raw=true)
 
-TODO: Short description about architecture.
+The idea of the master/worker architecture is to split the responsibilities of serving a client request. The master is responsible to assign these requests to an available worker. Then, this worker processes the actual request. Since there is only one master at once (i.e. the current leader), we need some backup instances of it in order to guarantee the reliability of the system.
+
 
 #### Master/Worker responsibilities
 
