@@ -1,0 +1,949 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style><title>report</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-cloud-computing-systems-2016---apache-zookeeper" class="anchor" href="#cloud-computing-systems-2016---apache-zookeeper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cloud Computing Systems 2016 - Apache ZooKeeper</h1>
+
+<p>Implementation of fault-tolerance techniques in a distributed setting based on master/worker architecture.</p>
+
+<h4>
+<a id="user-content-authors" class="anchor" href="#authors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors</h4>
+
+<ul>
+<li>Reto Schiegg</li>
+<li>David Wettstein</li>
+</ul>
+
+<h4>
+<a id="user-content-git-repository" class="anchor" href="#git-repository" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git repository</h4>
+
+<ul>
+<li><a href="https://github.com/dwettstein/zk">https://github.com/dwettstein/zk</a></li>
+</ul>
+
+<h4>
+<a id="user-content-deployment" class="anchor" href="#deployment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deployment</h4>
+
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Owner</strong></th>
+<th><strong>Group</strong></th>
+<th><strong>Name</strong></th>
+<th><strong>Status</strong></th>
+<th><strong>Host</strong></th>
+<th><strong>IPs</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7415</td>
+<td>r.schiegg1</td>
+<td>ccs16</td>
+<td>SchieggWettstein_ZooKeeper_3</td>
+<td>RUNNING</td>
+<td>newcluster-33</td>
+<td>172.16.2.122</td>
+</tr>
+<tr>
+<td>7413</td>
+<td>r.schiegg1</td>
+<td>ccs16</td>
+<td>SchieggWettstein_ZooKeeper_2</td>
+<td>RUNNING</td>
+<td>newcluster-19</td>
+<td>172.16.2.121</td>
+</tr>
+<tr>
+<td>7412</td>
+<td>r.schiegg1</td>
+<td>ccs16</td>
+<td>SchieggWettstein_ZooKeeper_1</td>
+<td>RUNNING</td>
+<td>newcluster-26</td>
+<td>172.16.2.120</td>
+</tr>
+</tbody>
+</table>
+
+<h1>
+<a id="user-content-description-of-the-project" class="anchor" href="#description-of-the-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description of the project</h1>
+
+<h2>
+<a id="user-content-setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<h4>
+<a id="user-content-used-technologiesresources" class="anchor" href="#used-technologiesresources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Used technologies/resources</h4>
+
+<ul>
+<li><a href="http://zookeeper.apache.org">Apache ZooKeeper</a></li>
+<li><a href="https://docs.python.org/2.7/">Python 2.7</a></li>
+<li><a href="http://kazoo.readthedocs.org/en/latest/">Kazoo library</a></li>
+<li><a href="https://github.com/rgs1/zk_shell">zk-shell</a></li>
+</ul>
+
+<h4>
+<a id="user-content-running-zookeeper" class="anchor" href="#running-zookeeper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running ZooKeeper</h4>
+
+<p>Use <em>ssh</em> for connecting to the appropriate VM, <em>cd</em> to the project's repository and start the Python scripts in the following order:</p>
+
+<pre><code>ubuntu@ubuntu:~/zk$ . reset_zookeeper.sh
+ubuntu@ubuntu:~/zk$ python master.py
+ubuntu@ubuntu:~/zk$ python worker.py
+ubuntu@ubuntu:~/zk$ python client.py
+ubuntu@ubuntu:~/zk$ zk-shell localhost     # see what's happening
+</code></pre>
+
+<p>To remove/kill a master or a worker:</p>
+
+<pre><code>ubuntu@ubuntu:~/zk$ ps aux
+ubuntu@ubuntu:~/zk$ kill {master.py_process_id | worker.py_process_id}
+</code></pre>
+
+<h2>
+<a id="user-content-apache-zookeeper" class="anchor" href="#apache-zookeeper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Apache ZooKeeper</h2>
+
+<p>Apache ZooKeeper is an open source project with the aim of providing distributed synchronization and configuration. It allows distributed processes to coordinate with each other through a shared hierarchical name space of data registers (znodes). These registers are kept in-memory, from which it follows that the size of the database, managed by ZooKeeper, is limited by memory. On the other hand, the main advantage is a very high throughput and low latency numbers. Thanks to this, it can also be used within large distributed systems.</p>
+
+<h2>
+<a id="user-content-masterworker-architecture" class="anchor" href="#masterworker-architecture" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Master/Worker architecture</h2>
+
+<p><a href="///C://Users/david/Development/Cloud%20Computing/zk/architecture.png?raw=true" target="_blank"><img src="///C://Users/david/Development/Cloud%20Computing/zk/architecture.png?raw=true" alt="Architecture" style="max-width:100%;"></a></p>
+
+<p>The idea of the master/worker architecture is to split the responsibilities of serving a client request. The master is responsible to assign these requests to an available worker. Then, this worker processes the actual request. Since there is only one master at once (i.e. the current leader), we need some backup instances of it in order to guarantee the reliability of the system.</p>
+
+<h4>
+<a id="user-content-responsibilities-and-watchers" class="anchor" href="#responsibilities-and-watchers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Responsibilities and watchers</h4>
+
+<h5>
+<a id="user-content-master" class="anchor" href="#master" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Master:</h5>
+
+<ul>
+<li>Watches the <code>/tasks</code> and <code>/workers</code> nodes</li>
+<li>Gets unassigned tasks and assign those to workers with respect to load-balancing</li>
+</ul>
+
+<p><a href="///C://Users/david/Development/Cloud%20Computing/zk/report/master.png?raw=true" target="_blank"><img src="///C://Users/david/Development/Cloud%20Computing/zk/report/master.png?raw=true" alt="Worker" width="50%" style="max-width:100%;"></a></p>
+
+<h5>
+<a id="user-content-worker" class="anchor" href="#worker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Worker:</h5>
+
+<ul>
+<li>Watches for child-nodes under itself (i.e. assigned tasks)</li>
+<li>Gets the data from <code>/data</code> node and executes assigned tasks</li>
+</ul>
+
+<p><a href="///C://Users/david/Development/Cloud%20Computing/zk/report/worker.png?raw=true" target="_blank"><img src="///C://Users/david/Development/Cloud%20Computing/zk/report/worker.png?raw=true" alt="Worker" width="40%" style="max-width:100%;"></a></p>
+
+<h5>
+<a id="user-content-client" class="anchor" href="#client" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client:</h5>
+
+<ul>
+<li>Creates new task child-nodes and watches for task completion</li>
+<li>Removes the according child-nodes in <code>/tasks</code> and <code>/data</code> nodes after a task result has been received</li>
+</ul>
+
+<p><a href="///C://Users/david/Development/Cloud%20Computing/zk/report/client.png?raw=true" target="_blank"><img src="///C://Users/david/Development/Cloud%20Computing/zk/report/client.png?raw=true" alt="Worker" width="40%" style="max-width:100%;"></a></p>
+
+<h4>
+<a id="user-content-leader-election" class="anchor" href="#leader-election" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Leader election</h4>
+
+<p>The idea of the leader election is to find a new master/leader after the previous master has been discontinued or disconnected.
+In our system, we implemented the leader election according to this example: <a href="http://zookeeper.apache.org/doc/trunk/recipes.html#sc_leaderElection">ZooKeeper Election Example</a>.</p>
+
+<p>The main concept is that each possible master gets a number according to the node creation order. The lowest existing node is the current master/leader. When the current master dies, the next master with lowest number takes over the responsibilites.</p>
+
+<p>In order to avoid a herd effect when the current master dies (i.e. every backup asks if it is the new master at once), every backup master sets its watch to the preceeding (next lower) backup master only.</p>
+
+<p>In our implementation, we have a <code>/master</code> and <code>/election</code> node. When a master is initialized, it creates a child-node with the same GUID in both nodes. Additionally, the child-node in the <code>/election</code> node uses the <em>ephemeral</em> and <em>sequence</em> flags. When the election node of the current master disappears, the succeeding master will receive an event and takes over. If a backup master dies, we update the watchers such that every backup master always watches the next lower master.</p>
+
+<h4>
+<a id="user-content-load-balancing" class="anchor" href="#load-balancing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Load-balancing</h4>
+
+<p>For assigning and executing the client requests/tasks, we use some kind of load-balancing algorithm such that the workload is evenly distributed over the workers. Whenever a worker gets a task, it creates a child-node under itself in order to remember what he has to do. When a new task arrives, the current master/leader assigns it to the worker with the least task assignments at this time. The result can be seen in the following <em>tree</em> log of <em>zk-shell</em>:</p>
+
+<pre><code>.
+├── tasks
+│   ├── ec334a07-e6aa-4d80-8142-22cfd832b3d3
+│   ├── 8d57784e-7968-4961-91a2-3b15f943570f
+│   ├── 6ffb7f69-6b15-42be-9e24-18e391906cac
+│   ├── 4f5e8ca0-406e-4a31-b036-56ff08cc7146
+│   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+├── workers
+│   ├── 00338d0b-3c10-47e4-bf37-24b32062b3ab
+│   │   ├── ec334a07-e6aa-4d80-8142-22cfd832b3d3
+│   │   ├── 8d57784e-7968-4961-91a2-3b15f943570f
+│   │   ├── 56d4d85e-da81-4aed-8a48-e9553b2aed92
+│   ├── 236f49f7-281b-4ac0-8b0b-56f4d7a229b8
+│   │   ├── 6ffb7f69-6b15-42be-9e24-18e391906cac
+│   │   ├── 4f5e8ca0-406e-4a31-b036-56ff08cc7146
+│   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
+</code></pre>
+
+<h2>
+<a id="user-content-fault-tolerance" class="anchor" href="#fault-tolerance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fault-tolerance</h2>
+
+<p>In this chapter, we will discuss the different fault-tolerance scenarios. In the more complex scenarios, a log file is provided in order to proove the correctness of our algorithm. A log file is separated by the following: zk-shell tree, master, worker, client.</p>
+
+<h4>
+<a id="user-content-c1w1m1---a-worker-or-client-fails" class="anchor" href="#c1w1m1---a-worker-or-client-fails" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>c1w1m1 - A worker or client fails</h4>
+
+<p>If a client fail, no more tasks will be created and a new client could be started straight forward. The only side effect is, that executed tasks will not be deleted, if the result is available. However, this side effect does not conflict with functions of the system. In addition, this can be easily fixed by just iterating once over all data and look, if the result is already stored in the value of the znode.
+If a single worker fails, no more tasks will be executed and all tasks remain unassigned. After starting a new worker instance, the unassigned tasks will be assigned to the new worker. Therefore, there will be no further issues.</p>
+
+<h4>
+<a id="user-content-c1w2m1---a-worker-fails" class="anchor" href="#c1w2m1---a-worker-fails" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>c1w2m1 - A worker fails</h4>
+
+<p>Log: <a href="///C://Users/david/Development/Cloud%20Computing/zk/logs/20160503_c1w2m1-worker_fail.log?raw=true">c1w2m1 - A worker fails</a></p>
+
+<p>After starting a client, a master and two workers, we waited until both workers had more than 3 tasks assigned. Due to our load-balancing the tasks were equally split. By sending a kill command to the worker process, one ephemeral worker node was deleted. As the master watches on changes in the "/workers_eph" node, he recognized that 4 tasks were assigned to a worker that does not exist anymore. Consequentely, the master reassigned the 4 tasks to the other worker. This behavior is more than apparent by the output of the master, where is says that 4 tasks were reassigned. In addition, the zookeeper tree indicates well that tasks were assigned to both workers, a worker got deleted and all tasks were executed (no more tasks nodes in the tree after stopping the client).</p>
+
+<h4>
+<a id="user-content-c2w2m1---workers-compete-in-executing-the-tasks" class="anchor" href="#c2w2m1---workers-compete-in-executing-the-tasks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>c2w2m1 - Workers compete in executing the tasks</h4>
+
+<p>Log: <a href="///C://Users/david/Development/Cloud%20Computing/zk/logs/20160503_c2w2m1-workers_compete_in_executing_the_tasks.log?raw=true">c2w2m1 - Workers compete in executing the tasks</a></p>
+
+<p>First, we started two workers, one master and two clients. Due to our load-balancing implemented in the master, each worker gets the same amount of tasks assigned. This is cearly visible in the master log section, where the assignment of a task is almost alternately by the worker. As we store the assigned tasks underneath a workers node, the workers do not conflict in executing the tasks. After stopping the client is is clear, that all tasks were executed as no more tasks are in the zookeeper tree.</p>
+
+<h4>
+<a id="user-content-c2w2m2---the-backup-resumes-the-job-of-the-master-upon-a-failure" class="anchor" href="#c2w2m2---the-backup-resumes-the-job-of-the-master-upon-a-failure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>c2w2m2 - The backup resumes the job of the master upon a failure</h4>
+
+<p>Log: <a href="///C://Users/david/Development/Cloud%20Computing/zk/logs/20160503_c2w2m2-master_fail.log?raw=true">c2w2m2 - A master fails</a></p>
+
+<p>After starting two master instance, two workers and two clients, the master node election was successfully exectued as the node with the lower sequencial number (0000000000) was initially selected as the master. Next, we waited until the master assigned a couple of tasks to both workers. Then, we exectued the kill command with the master's process-id  in order to delete the master. This is more than apparent in the zookeeper tree where the election node with the number (0000000000) and the master node was deleted. In addition, it is also clearly visible in the master log section, where it says "New elected master" with the new master node id (previos the backup). To test, if still further tasks were assigned, we continued the execution of the system. In all section of the log, you can examine that the client still generates tasks, the master still assigns tasks and the worker still executes tasks.</p>
+
+<h2>
+<a id="user-content-cluster-mode" class="anchor" href="#cluster-mode" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cluster mode</h2>
+
+<p>When zookeeper is in cluster mode, the zookeeper tree is shared with all servers. Therefore, zookeeper synchronizes all modifications made in the tree between the servers. As the configuration of such a cluster is done within minutes, it is very convenient to scale such a system. We tested our system by running the two instances of clients, workers and masters. However, an instance of a type (client, worker, master) is only on one server. Therefore, if a server is fails, there still exists at least an instance of each type. As the master-election nodes and the worker nodes are denoted as ephemeral, they will be deleted when the corresponding thread dies resp. when the server crashes. As a result, the master/worker system would detect the change and act accordingly.</p>
+
+<p>Example: If the server with a worker instance crashes, the corresponding ephemeral node will be deleted. As the master watches on "/workers_eph", the master will detect the change and will search for tasks which are assigned to the deleted worker. Due to the worker instance on another server, there still are workers and the master can start the re-assignment accordingly to the c1w2m1-case in the fault-tolerance chapter.</p>
+
+<h2>
+<a id="user-content-summary" class="anchor" href="#summary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Summary</h2>
+
+<p>Zookeeper is a very helpful system for developing scaleable applications with lots of distributed coordination. Firstly, it takes some effort to understand the complexity of the master/worker system as well as the different functionalities of zookeeper. However, after working with zookeeper a bit, you get the comprehension of working with the zookeeper tree, its znodes and the watcher-callback-functions.
+In addition, we were surprised how simple it is to configure a zookeeper in cluster mode. Consequentely, zookeeper is a big support in terms of implementing scaleable distributed systems.</p>
+</article></body></html>

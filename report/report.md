@@ -1,5 +1,3 @@
-TODO [EXERCISE] Consider scenario 4 and assume that the master lags (e.g., due to a long garbage-collection cycle) instead of crashing.
-
 # Cloud Computing Systems 2016 - Apache ZooKeeper
 Implementation of fault-tolerance techniques in a distributed setting based on master/worker architecture.
 
@@ -61,9 +59,25 @@ Apache ZooKeeper is an open source project with the aim of providing distributed
 
 The idea of the master/worker architecture is to split the responsibilities of serving a client request. The master is responsible to assign these requests to an available worker. Then, this worker processes the actual request. Since there is only one master at once (i.e. the current leader), we need some backup instances of it in order to guarantee the reliability of the system.
 
-#### Master/Worker responsibilities
+#### Responsibilities and watchers
 
-TODO David: Show responsibilities and the different watchers (sketch).
+##### Master:
+- Watches the `/tasks` and `/workers` nodes
+- Gets unassigned tasks and assign those to workers with respect to load-balancing
+
+<img src="master.png?raw=true" alt="Worker" width="50%">
+
+##### Worker:
+- Watches for child-nodes under itself (i.e. assigned tasks)
+- Gets the data from `/data` node and executes assigned tasks
+
+<img src="worker.png?raw=true" alt="Worker" width="40%">
+
+##### Client:
+- Creates new task child-nodes and watches for task completion
+- Removes the according child-nodes in `/tasks` and `/data` nodes after a task result has been received
+
+<img src="client.png?raw=true" alt="Worker" width="40%">
 
 #### Leader election
 
@@ -76,8 +90,7 @@ In order to avoid a herd effect when the current master dies (i.e. every backup 
 
 In our implementation, we have a `/master` and `/election` node. When a master is initialized, it creates a child-node with the same GUID in both nodes. Additionally, the child-node in the `/election` node uses the _ephemeral_ and _sequence_ flags. When the election node of the current master disappears, the succeeding master will receive an event and takes over. If a backup master dies, we update the watchers such that every backup master always watches the next lower master.
 
-
-## Load-balancing
+#### Load-balancing
 
 For assigning and executing the client requests/tasks, we use some kind of load-balancing algorithm such that the workload is evenly distributed over the workers. Whenever a worker gets a task, it creates a child-node under itself in order to remember what he has to do. When a new task arrives, the current master/leader assigns it to the worker with the least task assignments at this time. The result can be seen in the following _tree_ log of _zk-shell_:
 
@@ -101,6 +114,7 @@ For assigning and executing the client requests/tasks, we use some kind of load-
 │   │   ├── f9d3d07e-5d36-4ac9-b719-821061c5e74c
 ```
 
+
 ## Fault-tolerance
 
 In this chapter, we will discuss the different fault-tolerance scenarios. In the more complex scenarios, a log file is provided in order to proove the correctness of our algorithm. A log file is separated by the following: zk-shell tree, master, worker, client.
@@ -116,13 +130,11 @@ Log: [c1w2m1 - A worker fails](../logs/20160503_c1w2m1-worker_fail.log?raw=true)
 
 After starting a client, a master and two workers, we waited until both workers had more than 3 tasks assigned. Due to our load-balancing the tasks were equally split. By sending a kill command to the worker process, one ephemeral worker node was deleted. As the master watches on changes in the "/workers_eph" node, he recognized that 4 tasks were assigned to a worker that does not exist anymore. Consequentely, the master reassigned the 4 tasks to the other worker. This behavior is more than apparent by the output of the master, where is says that 4 tasks were reassigned. In addition, the zookeeper tree indicates well that tasks were assigned to both workers, a worker got deleted and all tasks were executed (no more tasks nodes in the tree after stopping the client).
 
-
 #### c2w2m1 - Workers compete in executing the tasks
 
 Log: [c2w2m1 - Workers compete in executing the tasks](../logs/20160503_c2w2m1-workers_compete_in_executing_the_tasks.log?raw=true)
 
 First, we started two workers, one master and two clients. Due to our load-balancing implemented in the master, each worker gets the same amount of tasks assigned. This is cearly visible in the master log section, where the assignment of a task is almost alternately by the worker. As we store the assigned tasks underneath a workers node, the workers do not conflict in executing the tasks. After stopping the client is is clear, that all tasks were executed as no more tasks are in the zookeeper tree.
-
 
 #### c2w2m2 - The backup resumes the job of the master upon a failure
 
